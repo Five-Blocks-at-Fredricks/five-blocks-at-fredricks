@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bglrjklbjl6ge"]
+
+[ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
+
+[sub_resource type="Environment" id="Environment_cg2ps"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cg2ps"]
+albedo_color = Color(0, 0, 0.388235, 1)
+
+[node name="Game" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+environment = SubResource("Environment_cg2ps")
+script = ExtResource("1_iukft")
+
+[node name="LightBulb" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84018, 0)
+omni_range = 14.003
+
+[node name="Building" type="Node3D" parent="."]
+
+[node name="OfficeFloor" type="CSGBox3D" parent="Building"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039814, -1.40588, -1.76374)
+size = Vector3(10.1873, 1, 5.94678)
+material = SubResource("StandardMaterial3D_cg2ps")

@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs7u2sn1giu57"]
+
+[ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://c4l00u6yvko1v" path="res://Scripts/SceneSwitcher.cs" id="2_853f1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_853f1"]
+font = ExtResource("1_tt5f1")
+font_size = 86
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UiContainer" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.72894, 1.72894)
+
+[node name="Title" type="Control" parent="UiContainer"]
+anchors_preset = 0
+offset_top = -40.0
+offset_right = 40.0
+
+[node name="Five" type="Label" parent="UiContainer/Title"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 23.0
+offset_right = 269.0
+offset_bottom = 199.0
+text = "Five"
+label_settings = SubResource("LabelSettings_853f1")
+vertical_alignment = 1
+
+[node name="Nights" type="Label" parent="UiContainer/Title"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 120.0
+offset_right = 423.0
+offset_bottom = 296.0
+text = "Blocks"
+label_settings = SubResource("LabelSettings_853f1")
+vertical_alignment = 1
+
+[node name="At" type="Label" parent="UiContainer/Title"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 215.0
+offset_right = 423.0
+offset_bottom = 391.0
+text = "At"
+label_settings = SubResource("LabelSettings_853f1")
+vertical_alignment = 1
+
+[node name="Fredricks" type="Label" parent="UiContainer/Title"]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 311.0
+offset_right = 423.0
+offset_bottom = 487.0
+text = "Fredricks"
+label_settings = SubResource("LabelSettings_853f1")
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="UiContainer"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 442.0
+offset_right = 317.0
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 41
+toggle_mode = true
+text = "Play!!!11!!"
+script = ExtResource("2_853f1")
+ScenePath = "res://Scenes/Game.tscn"
