@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=11 format=3 uid="uid://bglrjklbjl6ge"]
 
+[ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/ActiveCameraUpdater.cs" id="1_b2bpf"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
 [ext_resource type="Script" uid="uid://clsybb6d1s1xa" path="res://Scripts/HallwayFlash.cs" id="2_gl6un"]
+[ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSwitcher.cs" id="3_j5yw3"]
+[ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraButtonsUpdater.cs" id="4_7lihs"]
+[ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraToggle.cs" id="5_7lihs"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
 ambient_light_energy = 0.0
@@ -17,6 +21,7 @@ albedo_color = Color(0.44, 0.44, 0.44, 1)
 albedo_color = Color(0.2457, 0.2457, 0.39, 1)
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_b2bpf")
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12264, 0)
@@ -187,6 +192,9 @@ transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.35281, -1.40634, -2.5
 size = Vector3(2.09313, 1, 7.59867)
 material = SubResource("StandardMaterial3D_cg2ps")
 
+[node name="Camera" type="Camera3D" parent="Building/OfficeHallway/RightHallway"]
+transform = Transform3D(0.916265, -0.157635, 0.368252, 0, 0.919314, 0.393525, -0.400573, -0.360573, 0.842335, 7.36383, 2.74303, 0)
+
 [node name="LeftHallway" type="Node3D" parent="Building/OfficeHallway"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0519085, 0, 0)
 
@@ -215,9 +223,71 @@ transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.35281, -1.40634, -2.5
 size = Vector3(2.09313, 1, 7.59867)
 material = SubResource("StandardMaterial3D_cg2ps")
 
+[node name="Camera" type="Camera3D" parent="Building/OfficeHallway/LeftHallway"]
+transform = Transform3D(-0.888873, -0.187932, 0.417835, 6.21959e-09, 0.911998, 0.410194, 0.458153, -0.36461, 0.810651, 7.29253, 2.4986, 0)
+
 [node name="StorageRoom" type="Node3D" parent="Building"]
 
 [node name="OfficeHallwayLeftWall" type="CSGBox3D" parent="Building/StorageRoom"]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8355, 1.37826, -23.6358)
 size = Vector3(7.54237, 4.53756, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Cameras" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+script = ExtResource("4_7lihs")
+
+[node name="Cam1Button" type="Button" parent="GUI/Cameras"]
+layout_mode = 0
+offset_left = -194.0
+offset_top = -322.0
+offset_right = -13.0
+offset_bottom = -209.0
+theme_override_font_sizes/font_size = 66
+text = "2"
+script = ExtResource("3_j5yw3")
+TargetCamera = 1
+
+[node name="Cam2Button" type="Button" parent="GUI/Cameras"]
+layout_mode = 0
+offset_left = -534.0
+offset_top = -323.0
+offset_right = -353.0
+offset_bottom = -210.0
+theme_override_font_sizes/font_size = 66
+text = "1"
+script = ExtResource("3_j5yw3")
+TargetCamera = 2
+
+[node name="CameraToggle" type="Button" parent="GUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -537.0
+offset_top = -180.0
+offset_right = 513.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 81
+text = "Cameras"
+script = ExtResource("5_7lihs")
+
+[connection signal="button_up" from="GUI/Cameras/Cam1Button" to="GUI/Cameras/Cam1Button" method="_on_button_up"]
+[connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]
+[connection signal="button_up" from="GUI/CameraToggle" to="GUI/CameraToggle" method="_on_button_up"]
