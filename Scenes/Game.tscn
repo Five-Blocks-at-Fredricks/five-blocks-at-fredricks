@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=7 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
 [ext_resource type="Script" uid="uid://clsybb6d1s1xa" path="res://Scripts/HallwayFlash.cs" id="2_gl6un"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
 ambient_light_energy = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gl6un"]
+albedo_color = Color(0.525102, 0.525101, 0.525101, 1)
+metallic = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cg2ps"]
 albedo_color = Color(0.44, 0.44, 0.44, 1)
@@ -15,13 +19,41 @@ albedo_color = Color(0.2457, 0.2457, 0.39, 1)
 [node name="Game" type="Node3D"]
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669663, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12264, 0)
 environment = SubResource("Environment_cg2ps")
 script = ExtResource("1_iukft")
 
 [node name="Building" type="Node3D" parent="."]
 
 [node name="Office" type="Node3D" parent="Building"]
+
+[node name="Desk" type="Node3D" parent="Building/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.342506, -1.61117)
+
+[node name="Main" type="CSGBox3D" parent="Building/Office/Desk"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, -0.161865)
+size = Vector3(2.20154, 0.282349, 1.32373)
+material = SubResource("StandardMaterial3D_gl6un")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/Office/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_gl6un")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/Office/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_gl6un")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/Office/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 0.415877)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_gl6un")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/Office/Desk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 0.415877)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_gl6un")
 
 [node name="OfficeCeiling" type="CSGBox3D" parent="Building/Office"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.039814, 3.82659, -1.76374)
@@ -80,8 +112,8 @@ omni_range = 14.003
 [node name="CenterHallway" type="Node3D" parent="Building/OfficeHallway"]
 
 [node name="Floor" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -0.039814, -1.40588, -15.7324)
-size = Vector3(10.1873, 1, 22.0755)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -1.4819, -1.40588, -15.7324)
+size = Vector3(11.559, 1, 22.0755)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Ceiling" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway"]
@@ -111,11 +143,22 @@ operation = 2
 size = Vector3(1.75146, 3.035, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
 
+[node name="OfficeEntrance" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway/LeftWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165132, -1.98962, -5.89622)
+operation = 2
+size = Vector3(1.75146, 3.035, 1.83958)
+material = SubResource("StandardMaterial3D_iukft")
+
 [node name="Light" type="OmniLight3D" parent="Building/OfficeHallway/CenterHallway"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0333, -13.6477)
 light_energy = 0.0
 omni_range = 14.003
 script = ExtResource("2_gl6un")
+
+[node name="FarWall" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079628, 2.52992, -26.831)
+size = Vector3(10.1873, 6.83874, 1.02319)
+material = SubResource("StandardMaterial3D_iukft")
 
 [node name="RightHallway" type="Node3D" parent="Building/OfficeHallway"]
 
@@ -148,8 +191,8 @@ material = SubResource("StandardMaterial3D_cg2ps")
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0519085, 0, 0)
 
 [node name="FarWall" type="CSGBox3D" parent="Building/OfficeHallway/LeftHallway"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.70921, 1.37826, -19.7992)
-size = Vector3(3.3936, 4.53756, 1.83958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.7836, 1.37826, -19.7992)
+size = Vector3(7.54237, 4.53756, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="CloseWall" type="CSGBox3D" parent="Building/OfficeHallway/LeftHallway"]
@@ -163,11 +206,18 @@ size = Vector3(1.21047, 4.62197, 20.207)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="Ceiling" type="CSGBox3D" parent="Building/OfficeHallway/LeftHallway"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.78365, 4.09055, -10.1739)
-size = Vector3(1.68332, 1, 22.7928)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 9.74219, 4.09055, -10.8502)
+size = Vector3(3.54625, 1, 24.1454)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Floor" type="CSGBox3D" parent="Building/OfficeHallway/LeftHallway"]
 transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.35281, -1.40634, -2.57683)
 size = Vector3(2.09313, 1, 7.59867)
 material = SubResource("StandardMaterial3D_cg2ps")
+
+[node name="StorageRoom" type="Node3D" parent="Building"]
+
+[node name="OfficeHallwayLeftWall" type="CSGBox3D" parent="Building/StorageRoom"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8355, 1.37826, -23.6358)
+size = Vector3(7.54237, 4.53756, 1.83958)
+material = SubResource("StandardMaterial3D_iukft")
