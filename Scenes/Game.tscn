@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://clsybb6d1s1xa" path="res://Scripts/HallwayFlash.cs" id="2_gl6un"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
+ambient_light_energy = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cg2ps"]
 albedo_color = Color(0.44, 0.44, 0.44, 1)
@@ -13,7 +14,7 @@ albedo_color = Color(0.2457, 0.2457, 0.39, 1)
 
 [node name="Game" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.669663, 0)
 environment = SubResource("Environment_cg2ps")
 script = ExtResource("1_iukft")
