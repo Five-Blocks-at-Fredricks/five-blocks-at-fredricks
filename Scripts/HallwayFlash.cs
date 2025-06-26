@@ -3,6 +3,8 @@ using System;
 
 public partial class HallwayFlash : OmniLight3D {
     private bool WasFlashLightKeybindPressed = false;
+    private float FlashLightTimer = 0f;
+
     public override void _Process(double delta) {
         if (LightEnergy > 0) {
             LightEnergy -= (float)delta * 6f;
@@ -16,8 +18,10 @@ public partial class HallwayFlash : OmniLight3D {
             }
         }
 
-        if (Input.IsKeyPressed((Key)Key.Ctrl) && !WasFlashLightKeybindPressed) {
+        if (Input.IsKeyPressed((Key)Key.Ctrl) && !WasFlashLightKeybindPressed && FlashLightTimer > 1) {
             WasFlashLightKeybindPressed = true;
+            FlashLightTimer = 0;
+
             if (Globals.ActiveCamera == 0) {
                 LightEnergy = 5f;
             }
@@ -32,5 +36,6 @@ public partial class HallwayFlash : OmniLight3D {
         }
 
         WasFlashLightKeybindPressed = Input.IsKeyPressed(Key.Ctrl);
+        FlashLightTimer += (float)delta;
     }
 }
