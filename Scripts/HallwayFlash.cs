@@ -2,6 +2,7 @@ using Godot;
 using System;
 
 public partial class HallwayFlash : OmniLight3D {
+    private bool WasFlashLightKeybindPressed = false;
     public override void _Process(double delta) {
         if (LightEnergy > 0) {
             LightEnergy -= (float)delta * 6f;
@@ -15,7 +16,8 @@ public partial class HallwayFlash : OmniLight3D {
             }
         }
 
-        if (Input.IsKeyPressed((Key)Key.Ctrl)) {
+        if (Input.IsKeyPressed((Key)Key.Ctrl) && !WasFlashLightKeybindPressed) {
+            WasFlashLightKeybindPressed = true;
             if (Globals.ActiveCamera == 0) {
                 LightEnergy = 5f;
             }
@@ -28,5 +30,7 @@ public partial class HallwayFlash : OmniLight3D {
                 }
             }
         }
+
+        WasFlashLightKeybindPressed = Input.IsKeyPressed(Key.Ctrl);
     }
 }
