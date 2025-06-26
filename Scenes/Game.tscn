@@ -316,11 +316,11 @@ material = SubResource("StandardMaterial3D_gl6un")
 [node name="FlashLight" parent="Building/StorageRoom/Table" instance=ExtResource("4_fgofq")]
 transform = Transform3D(-0.0268869, 0, 0.0963177, 0, 0.1, 0, -0.0963177, 0, -0.0268869, 1.25849, 0.61336, -0.129488)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Building/StorageRoom/Table/FlashLight"]
+[node name="MainLight" type="SpotLight3D" parent="Building/StorageRoom/Table/FlashLight"]
 transform = Transform3D(10, 0, -7.15256e-07, 0, 10, 0, 7.15256e-07, 0, 10, 0.161743, 0, -3.51687)
 light_energy = 5.202
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Building/StorageRoom/Table/FlashLight"]
+[node name="Glow" type="OmniLight3D" parent="Building/StorageRoom/Table/FlashLight"]
 transform = Transform3D(10, 0, -7.15256e-07, 0, 10, 0, 7.15256e-07, 0, 10, -0.266174, 0, -5.08204)
 light_energy = 0.1
 
