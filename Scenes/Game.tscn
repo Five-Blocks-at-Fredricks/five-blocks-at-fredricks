@@ -286,7 +286,7 @@ light_energy = 0.0
 spot_range = 4096.0
 
 [node name="Table" type="Node3D" parent="Building/StorageRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3013, -0.0232951, -25.0638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.763, -0.0232951, -24.9231)
 
 [node name="Main" type="CSGBox3D" parent="Building/StorageRoom/Table"]
 transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, -0.161865)
