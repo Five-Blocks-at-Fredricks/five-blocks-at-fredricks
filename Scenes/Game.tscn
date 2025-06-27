@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=13 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/ActiveCameraUpdater.cs" id="1_b2bpf"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSwitcher.cs" id="3_j5yw3"]
 [ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraButtonsUpdater.cs" id="4_7lihs"]
 [ext_resource type="PackedScene" uid="uid://ce7d4l8llqmp1" path="res://Models/FlashLight.glb" id="4_fgofq"]
+[ext_resource type="Script" uid="uid://bbjqt5ybqq8fc" path="res://Scripts/LightFlicker.cs" id="5_2irst"]
 [ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraToggle.cs" id="5_7lihs"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
@@ -316,13 +317,21 @@ material = SubResource("StandardMaterial3D_gl6un")
 [node name="FlashLight" parent="Building/StorageRoom/Table" instance=ExtResource("4_fgofq")]
 transform = Transform3D(-0.0268869, 0, 0.0963177, 0, 0.1, 0, -0.0963177, 0, -0.0268869, 1.25849, 0.61336, -0.129488)
 
-[node name="MainLight" type="SpotLight3D" parent="Building/StorageRoom/Table/FlashLight"]
-transform = Transform3D(10, 0, -7.15256e-07, 0, 10, 0, 7.15256e-07, 0, 10, 0.161743, 0, -3.51687)
-light_energy = 5.202
+[node name="MainLight" type="Node3D" parent="Building/StorageRoom/Table/FlashLight"]
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+MaxFlickerSpeed = 1.0
+LightPaths = Array[NodePath]([NodePath("MainLight"), NodePath("Glow")])
+MinEnergies = Array[float]([0.0, 0.0])
+MaxEnergies = Array[float]([5.2, 0.1])
 
-[node name="Glow" type="OmniLight3D" parent="Building/StorageRoom/Table/FlashLight"]
-transform = Transform3D(10, 0, -7.15256e-07, 0, 10, 0, 7.15256e-07, 0, 10, -0.266174, 0, -5.08204)
+[node name="Glow" type="OmniLight3D" parent="Building/StorageRoom/Table/FlashLight/MainLight"]
+transform = Transform3D(10, 0, -2.38419e-07, 0, 10, 0, 4.76837e-07, 0, 10, -0.266174, 0, -5.08203)
 light_energy = 0.1
+
+[node name="MainLight" type="SpotLight3D" parent="Building/StorageRoom/Table/FlashLight/MainLight"]
+transform = Transform3D(10, 0, -4.76837e-07, 0, 10, 0, 7.15256e-07, 0, 10, 0.161743, 0, -3.51687)
+light_energy = 5.2
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
