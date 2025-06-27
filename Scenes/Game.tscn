@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=15 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
 [ext_resource type="Script" uid="uid://clsybb6d1s1xa" path="res://Scripts/HallwayFlash.cs" id="2_gl6un"]
+[ext_resource type="PackedScene" uid="uid://dqqanhyctpibc" path="res://Prefabs/fredrick.tscn" id="3_bf53h"]
 [ext_resource type="PackedScene" uid="uid://ce7d4l8llqmp1" path="res://Models/FlashLight.glb" id="4_fgofq"]
 [ext_resource type="Script" uid="uid://bbjqt5ybqq8fc" path="res://Scripts/LightFlicker.cs" id="5_2irst"]
 [ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraSystem/CameraButtonsUpdater.cs" id="6_bf53h"]
@@ -22,6 +23,9 @@ albedo_color = Color(0.44, 0.44, 0.44, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iukft"]
 albedo_color = Color(0.2457, 0.2457, 0.39, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2irst"]
+albedo_color = Color(0.329158, 0.329158, 0.329158, 1)
+
 [node name="Game" type="Node3D"]
 script = ExtResource("1_2irst")
 
@@ -29,6 +33,9 @@ script = ExtResource("1_2irst")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12264, 0)
 environment = SubResource("Environment_cg2ps")
 script = ExtResource("1_iukft")
+
+[node name="fredrick" parent="." instance=ExtResource("3_bf53h")]
+transform = Transform3D(-0.299771, 0, -0.0117257, 0, 0.3, 0, 0.0117257, 0, -0.299771, -4.19126, 3.4837, -41.583)
 
 [node name="Building" type="Node3D" parent="."]
 
@@ -387,6 +394,12 @@ material = SubResource("StandardMaterial3D_iukft")
 transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -29.4382, 8.41406, -28.4735)
 size = Vector3(3.64836, 2.81551, 1.27182)
 material = SubResource("StandardMaterial3D_iukft")
+
+[node name="Stage" type="CSGCylinder3D" parent="Building/DiningRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524648, 0, -41.691)
+radius = 6.33936
+sides = 30
+material = SubResource("StandardMaterial3D_2irst")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
