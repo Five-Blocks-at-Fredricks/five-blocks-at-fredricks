@@ -244,8 +244,8 @@ size = Vector3(7.54237, 4.53756, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="Floor" type="CSGBox3D" parent="Building/StorageRoom"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -23.8646, -1.40588, -15.7324)
-size = Vector3(9.73897, 1, 22.0755)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -23.8646, -1.40588, -17.8988)
+size = Vector3(9.73897, 1, 26.4084)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Ceiling" type="CSGBox3D" parent="Building/StorageRoom"]
@@ -253,19 +253,30 @@ transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -23.8646, 7.50052, -15.
 size = Vector3(9.73897, 1, 22.0755)
 material = SubResource("StandardMaterial3D_cg2ps")
 
-[node name="FarWall" type="CSGBox3D" parent="Building/StorageRoom"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -33.7694, 3.03173, -15.8794)
-size = Vector3(0.317729, 8.08685, 20.2071)
-material = SubResource("StandardMaterial3D_iukft")
-
 [node name="RightWall" type="CSGBox3D" parent="Building/StorageRoom"]
 transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -24.2774, 3.0793, -5.26437)
 size = Vector3(9.34634, 8.09949, 1.13943)
 material = SubResource("StandardMaterial3D_iukft")
 
+[node name="FarWall" type="CSGBox3D" parent="Building/StorageRoom"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -33.7694, 3.03173, -15.8794)
+size = Vector3(0.317729, 8.08685, 20.2071)
+material = SubResource("StandardMaterial3D_iukft")
+
 [node name="LeftWall" type="CSGBox3D" parent="Building/StorageRoom"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -24.3244, 2.99943, -26.3289)
-size = Vector3(9.30161, 8.08014, 0.882401)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -29.8608, 2.99943, -25.4704)
+size = Vector3(4.03546, 8.08014, 7.27802)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="DiningRoomEntrance" type="CSGBox3D" parent="Building/StorageRoom/LeftWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.210122, -2.52792, 0.0604477)
+operation = 2
+size = Vector3(0.708329, 3.02431, 7.68866)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="LeftWall2" type="CSGBox3D" parent="Building/StorageRoom"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -19.6499, 2.99943, -26.5479)
+size = Vector3(5.74421, 8.08014, 1.32041)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="CloseWall" type="CSGBox3D" parent="Building/StorageRoom"]
