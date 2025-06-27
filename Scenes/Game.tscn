@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://bglrjklbjl6ge"]
 
-[ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/ActiveCameraUpdater.cs" id="1_b2bpf"]
+[ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
 [ext_resource type="Script" uid="uid://clsybb6d1s1xa" path="res://Scripts/HallwayFlash.cs" id="2_gl6un"]
-[ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSwitcher.cs" id="3_j5yw3"]
-[ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraButtonsUpdater.cs" id="4_7lihs"]
 [ext_resource type="PackedScene" uid="uid://ce7d4l8llqmp1" path="res://Models/FlashLight.glb" id="4_fgofq"]
 [ext_resource type="Script" uid="uid://bbjqt5ybqq8fc" path="res://Scripts/LightFlicker.cs" id="5_2irst"]
-[ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraToggle.cs" id="5_7lihs"]
+[ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraSystem/CameraButtonsUpdater.cs" id="6_bf53h"]
+[ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSystem/CameraSwitcher.cs" id="7_71axn"]
+[ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraSystem/CameraToggle.cs" id="8_dahhg"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
 ambient_light_energy = 0.0
@@ -23,7 +23,7 @@ albedo_color = Color(0.44, 0.44, 0.44, 1)
 albedo_color = Color(0.2457, 0.2457, 0.39, 1)
 
 [node name="Game" type="Node3D"]
-script = ExtResource("1_b2bpf")
+script = ExtResource("1_2irst")
 
 [node name="PlayerCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12264, 0)
@@ -348,7 +348,7 @@ grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-script = ExtResource("4_7lihs")
+script = ExtResource("6_bf53h")
 
 [node name="Cam1Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
@@ -358,7 +358,7 @@ offset_right = -13.0
 offset_bottom = -209.0
 theme_override_font_sizes/font_size = 66
 text = "2"
-script = ExtResource("3_j5yw3")
+script = ExtResource("7_71axn")
 TargetCamera = 1
 
 [node name="Cam2Button" type="Button" parent="GUI/Cameras"]
@@ -369,7 +369,7 @@ offset_right = -353.0
 offset_bottom = -210.0
 theme_override_font_sizes/font_size = 66
 text = "1"
-script = ExtResource("3_j5yw3")
+script = ExtResource("7_71axn")
 TargetCamera = 2
 
 [node name="Cam3Button" type="Button" parent="GUI/Cameras"]
@@ -380,7 +380,7 @@ offset_right = -578.0
 offset_bottom = -542.0
 theme_override_font_sizes/font_size = 66
 text = "3"
-script = ExtResource("3_j5yw3")
+script = ExtResource("7_71axn")
 TargetCamera = 3
 
 [node name="CameraToggle" type="Button" parent="GUI"]
@@ -397,7 +397,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 81
 text = "Cameras"
-script = ExtResource("5_7lihs")
+script = ExtResource("8_dahhg")
 
 [connection signal="button_up" from="GUI/Cameras/Cam1Button" to="GUI/Cameras/Cam1Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]
