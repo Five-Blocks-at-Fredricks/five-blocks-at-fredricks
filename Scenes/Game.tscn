@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=17 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraSystem/CameraButtonsUpdater.cs" id="6_bf53h"]
 [ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSystem/CameraSwitcher.cs" id="7_71axn"]
 [ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraSystem/CameraToggle.cs" id="8_dahhg"]
+[ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="9_dahhg"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
 ambient_light_energy = 0.0
@@ -452,6 +453,7 @@ offset_left = -194.0
 offset_top = -322.0
 offset_right = -13.0
 offset_bottom = -209.0
+theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "2"
 script = ExtResource("7_71axn")
@@ -463,6 +465,7 @@ offset_left = -534.0
 offset_top = -323.0
 offset_right = -353.0
 offset_bottom = -210.0
+theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "1"
 script = ExtResource("7_71axn")
@@ -474,6 +477,7 @@ offset_left = -759.0
 offset_top = -655.0
 offset_right = -578.0
 offset_bottom = -542.0
+theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "3"
 script = ExtResource("7_71axn")
@@ -485,6 +489,7 @@ offset_left = -759.0
 offset_top = -904.0
 offset_right = -578.0
 offset_bottom = -791.0
+theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "4"
 script = ExtResource("7_71axn")
@@ -502,6 +507,7 @@ offset_right = 513.0
 offset_bottom = -46.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 81
 text = "Cameras"
 script = ExtResource("8_dahhg")
