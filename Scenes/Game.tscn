@@ -212,6 +212,7 @@ transform = Transform3D(0.916265, -0.157635, 0.368252, 0, 0.919314, 0.393525, -0
 
 [node name="Light" type="SpotLight3D" parent="Building/OfficeHallway/RightHallway/Camera"]
 light_energy = 0.0
+shadow_enabled = true
 spot_range = 4096.0
 
 [node name="LeftHallway" type="Node3D" parent="Building/OfficeHallway"]
@@ -247,6 +248,7 @@ transform = Transform3D(-0.888873, -0.187932, 0.417835, 6.21959e-09, 0.911998, 0
 
 [node name="Light" type="SpotLight3D" parent="Building/OfficeHallway/LeftHallway/Camera"]
 light_energy = 0.0
+shadow_enabled = true
 spot_range = 4096.0
 
 [node name="StorageRoom" type="Node3D" parent="Building"]
@@ -308,6 +310,7 @@ transform = Transform3D(0.712908, 0.246778, -0.656402, 0, 0.936035, 0.351907, 0.
 
 [node name="Light" type="SpotLight3D" parent="Building/StorageRoom/Camera"]
 light_energy = 0.0
+shadow_enabled = true
 spot_range = 4096.0
 
 [node name="Table" type="Node3D" parent="Building/StorageRoom"]
