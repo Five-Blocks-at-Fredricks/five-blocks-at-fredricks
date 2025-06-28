@@ -26,11 +26,16 @@ public partial class HallwayFlash : OmniLight3D {
                 LightEnergy = 5f;
             }
 
+            int cam = 0;
             if (Globals.ActiveCamera != 0) {
                 foreach (Camera3D Camera in Globals.Cameras) {
                     Light3D Light = Camera.GetNode<Light3D>("Light");
 
-                    Light.LightEnergy = 5f;
+                    if (cam == Globals.ActiveCamera - 1) {
+                        Light.LightEnergy = 5f;
+                    }
+
+                    cam += 1;
                 }
             }
         }
