@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs7u2sn1giu57"]
+[gd_scene load_steps=5 format=3 uid="uid://cs7u2sn1giu57"]
 
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://c4l00u6yvko1v" path="res://Scripts/SceneSwitcher.cs" id="2_853f1"]
+[ext_resource type="AudioStream" uid="uid://gm8ulvgmouba" path="res://Audio/MenuMusic.mp3" id="3_8saeu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_853f1"]
 font = ExtResource("1_tt5f1")
@@ -78,3 +79,7 @@ toggle_mode = true
 text = "Play!!!11!!"
 script = ExtResource("2_853f1")
 ScenePath = "res://Scenes/Game.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8saeu")
+autoplay = true
