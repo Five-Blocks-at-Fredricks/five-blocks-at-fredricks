@@ -408,6 +408,21 @@ radius = 6.33936
 sides = 30
 material = SubResource("StandardMaterial3D_2irst")
 
+[node name="StageLight" type="Node3D" parent="Building/DiningRoom"]
+transform = Transform3D(0.810093, 0.356284, -0.46563, -5.49142e-09, 0.794181, 0.607681, 0.586302, -0.492278, 0.643361, -5.47732, 8.65944, -32.0297)
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+LightPaths = Array[NodePath]([NodePath("SpotLight")])
+MinEnergies = Array[float]([4.0])
+MaxEnergies = Array[float]([5.0])
+
+[node name="SpotLight" type="SpotLight3D" parent="Building/DiningRoom/StageLight"]
+transform = Transform3D(1, -5.96046e-08, 0, 5.96046e-08, 1, 5.96046e-08, 5.96046e-08, 0, 1, 0, 0, 0)
+light_color = Color(1, 0, 1, 1)
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 19.131
+
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Cameras" type="Control" parent="GUI"]
