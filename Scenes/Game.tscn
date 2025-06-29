@@ -372,8 +372,8 @@ shadow_enabled = true
 spot_range = 4096.0
 
 [node name="Floor" type="CSGBox3D" parent="Building/DiningRoom"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -16.383, -1.40588, -42.0478)
-size = Vector3(16.8553, 1, 25.9169)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -10.245, -1.40588, -42.0478)
+size = Vector3(22.6936, 1, 25.9169)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Ceiling" type="CSGBox3D" parent="Building/DiningRoom"]
@@ -396,6 +396,12 @@ transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 0.96159, 4.41538, -42.0
 size = Vector3(0.422467, 10.7822, 25.9169)
 material = SubResource("StandardMaterial3D_iukft")
 
+[node name="Parts&ServiceEntrance" type="CSGBox3D" parent="Building/DiningRoom/RightWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.44628, 9.75578)
+operation = 2
+size = Vector3(0.422467, 3.88964, 2.16282)
+material = SubResource("StandardMaterial3D_iukft")
+
 [node name="Closewall" type="CSGBox3D" parent="Building/DiningRoom"]
 transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -12.1706, 4.39059, -28.4735)
 size = Vector3(12.8436, 10.8625, 1.27182)
@@ -412,6 +418,11 @@ radius = 6.33936
 sides = 30
 material = SubResource("StandardMaterial3D_2irst")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Building/DiningRoom/Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54804, 0.0505981, -0.127197)
+operation = 2
+size = Vector3(6.0469, 2.60706, 13.5024)
+
 [node name="StageLight" type="Node3D" parent="Building/DiningRoom"]
 transform = Transform3D(0.810093, 0.356284, -0.46563, -5.49142e-09, 0.794181, 0.607681, 0.586302, -0.492278, 0.643361, -5.47732, 8.65944, -32.0297)
 script = ExtResource("5_2irst")
@@ -426,6 +437,36 @@ light_color = Color(1, 0, 1, 1)
 light_energy = 5.0
 shadow_enabled = true
 spot_range = 19.131
+
+[node name="PartsAndService" type="Node3D" parent="Building"]
+
+[node name="RightWall" type="CSGBox3D" parent="Building/PartsAndService"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.54136, 4.44379, -46.1093)
+size = Vector3(5.79246, 10.7593, 1.42915)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="LeftWall" type="CSGBox3D" parent="Building/PartsAndService"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.50081, 4.44379, -29.7784)
+size = Vector3(5.83104, 10.7593, 1.42915)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="CloseWall" type="CSGBox3D" parent="Building/PartsAndService"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 14.0593, 4.41538, -37.9514)
+size = Vector3(0.422467, 10.7822, 17.7241)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="Ceiling" type="CSGBox3D" parent="Building/PartsAndService"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.4943, 9.27686, -37.2759)
+size = Vector3(5.82036, 1, 16.373)
+material = SubResource("StandardMaterial3D_cg2ps")
+
+[node name="Camera" type="Camera3D" parent="Building/PartsAndService"]
+transform = Transform3D(-0.793481, -0.223061, 0.566244, -9.36022e-10, 0.930411, 0.366518, -0.608595, 0.290825, -0.738263, 12.4245, 6.85684, -44.3978)
+
+[node name="Light" type="SpotLight3D" parent="Building/PartsAndService/Camera"]
+light_energy = 0.0
+shadow_enabled = true
+spot_range = 4096.0
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -495,6 +536,18 @@ text = "4"
 script = ExtResource("7_71axn")
 TargetCamera = 4
 
+[node name="Cam5Button" type="Button" parent="GUI/Cameras"]
+layout_mode = 0
+offset_left = -680.769
+offset_top = -1090.38
+offset_right = -499.769
+offset_bottom = -977.385
+theme_override_fonts/font = ExtResource("9_dahhg")
+theme_override_font_sizes/font_size = 66
+text = "5"
+script = ExtResource("7_71axn")
+TargetCamera = 5
+
 [node name="CameraToggle" type="Button" parent="GUI"]
 anchors_preset = 7
 anchor_left = 0.5
@@ -516,4 +569,5 @@ script = ExtResource("8_dahhg")
 [connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam3Button" to="GUI/Cameras/Cam3Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam4Button" to="GUI/Cameras/Cam4Button" method="_on_button_up"]
+[connection signal="button_up" from="GUI/Cameras/Cam5Button" to="GUI/Cameras/Cam5Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/CameraToggle" to="GUI/CameraToggle" method="_on_button_up"]
