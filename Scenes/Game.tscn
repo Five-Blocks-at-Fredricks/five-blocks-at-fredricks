@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=19 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://darkbydphnjla" path="res://Prefabs/bernie.tscn" id="4_71axn"]
 [ext_resource type="PackedScene" uid="uid://ce7d4l8llqmp1" path="res://Models/FlashLight.glb" id="4_fgofq"]
 [ext_resource type="Script" uid="uid://bbjqt5ybqq8fc" path="res://Scripts/LightFlicker.cs" id="5_2irst"]
+[ext_resource type="Script" uid="uid://b4pkbcmggk41w" path="res://Scripts/DoorLogic.cs" id="5_3so38"]
 [ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraSystem/CameraButtonsUpdater.cs" id="6_bf53h"]
 [ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSystem/CameraSwitcher.cs" id="7_71axn"]
 [ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraSystem/CameraToggle.cs" id="8_dahhg"]
@@ -24,6 +25,10 @@ albedo_color = Color(0.44, 0.44, 0.44, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iukft"]
 albedo_color = Color(0.2457, 0.2457, 0.39, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dahhg"]
+albedo_color = Color(0.306923, 0.306923, 0.306923, 1)
+metallic = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2irst"]
 albedo_color = Color(0.329158, 0.329158, 0.329158, 1)
@@ -121,6 +126,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0267372, -0.747481, 0.104)
 operation = 2
 size = Vector3(1.75146, 3.035, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
+
+[node name="LeftDoor" type="CSGBox3D" parent="Building/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70697, 3.73872, -1.66524)
+size = Vector3(0.243896, 3.035, 1.83958)
+material = SubResource("StandardMaterial3D_dahhg")
+script = ExtResource("5_3so38")
+
+[node name="RightDoor" type="CSGBox3D" parent="Building/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57306, 3.73872, -1.66524)
+size = Vector3(0.243896, 3.035, 1.83958)
+material = SubResource("StandardMaterial3D_dahhg")
+script = ExtResource("5_3so38")
 
 [node name="LightBulb" type="OmniLight3D" parent="Building/Office"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69188, -2.04621)
