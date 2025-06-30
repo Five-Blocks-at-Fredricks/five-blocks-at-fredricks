@@ -69,6 +69,9 @@ transform = Transform3D(-0.299771, 0, -0.0117257, 0, 0.3, 0, 0.0117257, 0, -0.29
 [node name="bernie" parent="." instance=ExtResource("4_71axn")]
 transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.79284, 3.6138, -44.6794)
 
+[node name="cheeky" parent="." instance=ExtResource("6_wxwew")]
+transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.58105, 3.49344, -38.5134)
+
 [node name="Building" type="Node3D" parent="."]
 
 [node name="Office" type="Node3D" parent="Building"]
@@ -165,9 +168,6 @@ script = ExtResource("5_3so38")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69188, -2.04621)
 shadow_enabled = true
 omni_range = 14.003
-
-[node name="cheeky" parent="Building/Office" instance=ExtResource("6_wxwew")]
-transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.58105, 3.49344, -38.5134)
 
 [node name="OfficeHallway" type="Node3D" parent="Building"]
 
