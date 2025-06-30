@@ -412,6 +412,14 @@ light_energy = 0.0
 shadow_enabled = true
 spot_range = 4096.0
 
+[node name="Camera2" type="Camera3D" parent="Building/DiningRoom"]
+transform = Transform3D(0.370314, 0.340461, -0.864265, 4.45585e-09, 0.930411, 0.366518, 0.928906, -0.135727, 0.344545, -8.69003, 7.27841, -38.431)
+
+[node name="Light" type="SpotLight3D" parent="Building/DiningRoom/Camera2"]
+light_energy = 0.0
+shadow_enabled = true
+spot_range = 4096.0
+
 [node name="Floor" type="CSGBox3D" parent="Building/DiningRoom"]
 transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -10.245, -1.40588, -49.3325)
 size = Vector3(22.6936, 1, 40.4863)
@@ -1073,9 +1081,21 @@ offset_right = -659.385
 offset_bottom = -1231.23
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
-text = "4"
+text = "4a"
 script = ExtResource("7_71axn")
 TargetCamera = 4
+
+[node name="Cam4ButtonB" type="Button" parent="GUI/Cameras"]
+layout_mode = 0
+offset_left = -463.461
+offset_top = -1261.54
+offset_right = -282.461
+offset_bottom = -1148.54
+theme_override_fonts/font = ExtResource("9_dahhg")
+theme_override_font_sizes/font_size = 66
+text = "4b"
+script = ExtResource("7_71axn")
+TargetCamera = 7
 
 [node name="Cam5Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
@@ -1138,6 +1158,7 @@ script = ExtResource("8_dahhg")
 [connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam3Button" to="GUI/Cameras/Cam3Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam4Button" to="GUI/Cameras/Cam4Button" method="_on_button_up"]
+[connection signal="button_up" from="GUI/Cameras/Cam4ButtonB" to="GUI/Cameras/Cam4ButtonB" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam5Button" to="GUI/Cameras/Cam5Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam6Button" to="GUI/Cameras/Cam6Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/CameraToggle" to="GUI/CameraToggle" method="_on_button_up"]
