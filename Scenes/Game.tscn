@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=28 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSystem/CameraSwitcher.cs" id="7_71axn"]
 [ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraSystem/CameraToggle.cs" id="8_dahhg"]
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="9_dahhg"]
+[ext_resource type="PackedScene" uid="uid://cfuhxa0ms8sco" path="res://Models/arcade-machine2.glb" id="10_acvyw"]
 [ext_resource type="Texture2D" uid="uid://d0y87j81ygtye" path="res://Images/CameraMap.png" id="12_3cx6b"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
@@ -1014,6 +1015,129 @@ transform = Transform3D(0.573048, 0.300369, -0.762493, 1.08211e-08, 0.930411, 0.
 light_energy = 0.0
 shadow_enabled = true
 spot_range = 4096.0
+
+[node name="ArcadeMachines" type="Node3D" parent="Building/Arcade"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7669, 0, -64.5676)
+
+[node name="ArcadeMachine1" parent="Building/Arcade/ArcadeMachines" instance=ExtResource("10_acvyw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.866634, 0, -3.54144)
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+MaxFlickerSpeed = 1.0
+LightPaths = Array[NodePath]([NodePath("MainLight"), NodePath("ScreenLight")])
+MinEnergies = Array[float]([0.0, 0.0])
+MaxEnergies = Array[float]([1.0, 1.0])
+
+[node name="ScreenLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.09578, 2.11812, 0)
+shadow_enabled = true
+spot_angle = 59.54
+
+[node name="MainLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine1"]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 0.899788, 2.11812, 0)
+shadow_enabled = true
+spot_range = 30.921
+spot_angle = 59.6
+
+[node name="ArcadeMachine2" parent="Building/Arcade/ArcadeMachines" instance=ExtResource("10_acvyw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.68061, 0, -3.54144)
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+MaxFlickerSpeed = 1.0
+LightPaths = Array[NodePath]([NodePath("MainLight"), NodePath("ScreenLight")])
+MinEnergies = Array[float]([0.0, 0.0])
+MaxEnergies = Array[float]([1.0, 1.0])
+
+[node name="ScreenLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.09578, 2.11812, 0)
+shadow_enabled = true
+spot_angle = 59.54
+
+[node name="MainLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine2"]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 0.899788, 2.11812, 0)
+shadow_enabled = true
+spot_range = 30.921
+spot_angle = 59.6
+
+[node name="ArcadeMachine3" parent="Building/Arcade/ArcadeMachines" instance=ExtResource("10_acvyw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4982, 0, -3.54144)
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+MaxFlickerSpeed = 1.0
+LightPaths = Array[NodePath]([NodePath("MainLight"), NodePath("ScreenLight")])
+MinEnergies = Array[float]([0.0, 0.0])
+MaxEnergies = Array[float]([1.0, 1.0])
+
+[node name="ScreenLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.09578, 2.11812, 0)
+shadow_enabled = true
+spot_angle = 59.54
+
+[node name="MainLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine3"]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 0.899788, 2.11812, 0)
+shadow_enabled = true
+spot_range = 30.921
+spot_angle = 59.6
+
+[node name="ArcadeMachine4" parent="Building/Arcade/ArcadeMachines" instance=ExtResource("10_acvyw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.2407, 0, -3.54144)
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+MaxFlickerSpeed = 1.0
+LightPaths = Array[NodePath]([NodePath("MainLight"), NodePath("ScreenLight")])
+MinEnergies = Array[float]([0.0, 0.0])
+MaxEnergies = Array[float]([1.0, 1.0])
+
+[node name="ScreenLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.09578, 2.11812, 0)
+shadow_enabled = true
+spot_angle = 59.54
+
+[node name="MainLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine4"]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 0.899788, 2.11812, 0)
+shadow_enabled = true
+spot_range = 30.921
+spot_angle = 59.6
+
+[node name="ArcadeMachine5" parent="Building/Arcade/ArcadeMachines" instance=ExtResource("10_acvyw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.9817, 0, -3.54144)
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+MaxFlickerSpeed = 1.0
+LightPaths = Array[NodePath]([NodePath("MainLight"), NodePath("ScreenLight")])
+MinEnergies = Array[float]([0.0, 0.0])
+MaxEnergies = Array[float]([1.0, 1.0])
+
+[node name="ScreenLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.09578, 2.11812, 0)
+shadow_enabled = true
+spot_angle = 59.54
+
+[node name="MainLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine5"]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 0.899788, 2.11812, 0)
+shadow_enabled = true
+spot_range = 30.921
+spot_angle = 59.6
+
+[node name="ArcadeMachine6" parent="Building/Arcade/ArcadeMachines" instance=ExtResource("10_acvyw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.88935, 0, -3.54144)
+script = ExtResource("5_2irst")
+MinFlickerSpeed = 0.1
+MaxFlickerSpeed = 1.0
+LightPaths = Array[NodePath]([NodePath("MainLight"), NodePath("ScreenLight")])
+MinEnergies = Array[float]([0.0, 0.0])
+MaxEnergies = Array[float]([1.0, 1.0])
+
+[node name="ScreenLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine6"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.09578, 2.11812, 0)
+shadow_enabled = true
+spot_angle = 59.54
+
+[node name="MainLight" type="SpotLight3D" parent="Building/Arcade/ArcadeMachines/ArcadeMachine6"]
+transform = Transform3D(1.33118e-07, 0, -1, 0, 1, 0, 1, 0, 1.33118e-07, 0.899788, 2.11812, 0)
+shadow_enabled = true
+spot_range = 30.921
+spot_angle = 59.6
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
