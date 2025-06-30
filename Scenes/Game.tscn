@@ -68,7 +68,7 @@ script = ExtResource("1_iukft")
 transform = Transform3D(-0.299771, 0, -0.0117257, 0, 0.3, 0, 0.0117257, 0, -0.299771, -4.19126, 3.4837, -41.583)
 
 [node name="bernie" parent="." instance=ExtResource("4_71axn")]
-transform = Transform3D(2.26494e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, 2.26494e-08, -7.82711, 1.566, -4.68392)
+transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.607, 3.542, -44.654)
 script = ExtResource("5_alh3a")
 
 [node name="cheeky" parent="." instance=ExtResource("6_wxwew")]
