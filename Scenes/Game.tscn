@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=21 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -33,6 +33,10 @@ metallic = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2irst"]
 albedo_color = Color(0.329158, 0.329158, 0.329158, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3cx6b"]
+font = ExtResource("9_dahhg")
+font_size = 51
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_2irst")
@@ -620,6 +624,17 @@ TargetCamera = 6
 position = Vector2(-451.115, -898.531)
 scale = Vector2(5.21363, 5.21363)
 texture = ExtResource("12_3cx6b")
+
+[node name="Label" type="Label" parent="GUI/Cameras"]
+layout_mode = 0
+offset_left = -376.923
+offset_top = -248.077
+offset_right = -164.923
+offset_bottom = -150.077
+text = "Office"
+label_settings = SubResource("LabelSettings_3cx6b")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CameraToggle" type="Button" parent="GUI"]
 anchors_preset = 7
