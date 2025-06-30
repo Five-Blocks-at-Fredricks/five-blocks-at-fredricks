@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4b1q1cd03tuy"]
+
+[ext_resource type="PackedScene" uid="uid://bjkxgpy7vom77" path="res://Models/cheeky.glb" id="1_daihf"]
+
+[node name="cheeky" instance=ExtResource("1_daihf")]
