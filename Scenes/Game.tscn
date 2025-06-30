@@ -226,8 +226,8 @@ size = Vector3(1.68332, 1, 22.7928)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Floor" type="CSGBox3D" parent="Building/OfficeHallway/RightHallway"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.35281, -1.40634, -2.57683)
-size = Vector3(2.09313, 1, 7.59867)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.29961, -1.40634, -2.57683)
+size = Vector3(2.14373, 1, 7.59867)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Camera" type="Camera3D" parent="Building/OfficeHallway/RightHallway"]
@@ -262,8 +262,8 @@ size = Vector3(3.54625, 1, 24.1454)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Floor" type="CSGBox3D" parent="Building/OfficeHallway/LeftHallway"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.35281, -1.40634, -2.57683)
-size = Vector3(2.09313, 1, 7.59867)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, 7.30782, -1.40634, -2.57683)
+size = Vector3(2.13592, 1, 7.59867)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Camera" type="Camera3D" parent="Building/OfficeHallway/LeftHallway"]
