@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=20 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSystem/CameraSwitcher.cs" id="7_71axn"]
 [ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraSystem/CameraToggle.cs" id="8_dahhg"]
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="9_dahhg"]
+[ext_resource type="Texture2D" uid="uid://d0y87j81ygtye" path="res://Images/CameraMap.png" id="12_3cx6b"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
 ambient_light_energy = 0.0
@@ -543,10 +544,11 @@ script = ExtResource("6_bf53h")
 
 [node name="Cam1Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -194.0
-offset_top = -322.0
-offset_right = -13.0
-offset_bottom = -209.0
+offset_left = -105.769
+offset_top = -196.154
+offset_right = 75.2308
+offset_bottom = -83.1538
+scale = Vector2(0.538462, 0.538462)
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "2"
@@ -555,10 +557,11 @@ TargetCamera = 1
 
 [node name="Cam2Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -534.0
-offset_top = -323.0
-offset_right = -353.0
-offset_bottom = -210.0
+offset_left = -550.0
+offset_top = -194.231
+offset_right = -388.0
+offset_bottom = -93.2308
+scale = Vector2(0.615394, 0.615394)
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "1"
@@ -567,10 +570,10 @@ TargetCamera = 2
 
 [node name="Cam3Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -759.616
-offset_top = -567.308
-offset_right = -578.616
-offset_bottom = -454.308
+offset_left = -859.616
+offset_top = -848.077
+offset_right = -678.616
+offset_bottom = -735.077
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "3"
@@ -579,10 +582,10 @@ TargetCamera = 3
 
 [node name="Cam4Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -759.616
-offset_top = -750.0
-offset_right = -578.616
-offset_bottom = -637.0
+offset_left = -840.385
+offset_top = -1344.23
+offset_right = -659.385
+offset_bottom = -1231.23
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "4"
@@ -591,10 +594,10 @@ TargetCamera = 4
 
 [node name="Cam5Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -269.231
-offset_top = -692.308
-offset_right = -88.2308
-offset_bottom = -579.313
+offset_left = -205.769
+offset_top = -1248.08
+offset_right = -24.7693
+offset_bottom = -1135.08
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "5"
@@ -603,15 +606,20 @@ TargetCamera = 5
 
 [node name="Cam6Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -544.231
-offset_top = -901.923
-offset_right = -363.231
-offset_bottom = -788.928
+offset_left = -861.539
+offset_top = -1605.77
+offset_right = -680.539
+offset_bottom = -1492.77
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "6"
 script = ExtResource("7_71axn")
 TargetCamera = 6
+
+[node name="CameraMap" type="Sprite2D" parent="GUI/Cameras"]
+position = Vector2(-451.115, -898.531)
+scale = Vector2(5.21363, 5.21363)
+texture = ExtResource("12_3cx6b")
 
 [node name="CameraToggle" type="Button" parent="GUI"]
 anchors_preset = 7
