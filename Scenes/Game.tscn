@@ -164,8 +164,8 @@ size = Vector3(10.1873, 1, 22.0755)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="RightWall" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57115, 2.5438, -15.8225)
-size = Vector3(1.02674, 6.91317, 21.6771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57115, 2.5438, -15.6832)
+size = Vector3(1.02674, 6.91317, 21.9556)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="RightHallEntrance" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway/RightWall"]
@@ -175,8 +175,8 @@ size = Vector3(1.75146, 3.035, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="LeftWall" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.66645, 2.52883, -15.8225)
-size = Vector3(1.02674, 6.88322, 21.6771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.64512, 2.52883, -15.6949)
+size = Vector3(0.984073, 6.88322, 21.9323)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="LeftHallEntrance" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway/LeftWall"]
