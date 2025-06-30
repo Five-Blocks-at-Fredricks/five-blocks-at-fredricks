@@ -1,0 +1,86 @@
+using Godot;
+using System;
+
+public partial class Bernie : Node3D {
+    private int AiLevel = 20;
+    private int PositionNumber = 0;
+    private Random random = new Random();
+    private float MoveTimer = 0f;
+
+    public override void _Process(double delta) {
+        int MoveValue = random.Next(1, 21);
+        Vector3 Pos = Position;
+        Vector3 Rot = RotationDegrees;
+
+        MeshInstance3D Head = GetNode<MeshInstance3D>("Cube_004");
+        Vector3 HeadRotation = Head.RotationDegrees;
+
+        if (MoveValue <= AiLevel && MoveTimer >= 5f) {
+            // Bernie's Starting Pos:
+            // X: -2.607
+            // Y: 3.542
+            // Z: -44.654
+
+            if (PositionNumber == 0) {
+                PositionNumber = 1;
+
+                Pos.X = -28.2f;
+                Pos.Y = 1.642f;
+                Pos.Z = -33.981f;
+
+                Rot.Y = 120f;
+            } else if (PositionNumber == 1) {
+                PositionNumber = 2;
+
+                Pos.X = -25.278f;
+                Pos.Y = 1.566f;
+                Pos.Z = -14.419f;
+
+                Rot.Y = -133.1f;
+
+                HeadRotation.Z = 13.3f;
+            } else if (PositionNumber == 2) {
+                PositionNumber = 3;
+
+                Pos.X = -2.607f;
+                Pos.Y = 1.566f;
+                Pos.Z = -23.264f;
+
+                Rot.Y = -90f;
+
+                HeadRotation.Z = 0f;
+            } else if (PositionNumber == 3) {
+                PositionNumber = 4;
+
+                Pos.X = -7.827f;
+                Pos.Y = 1.566f;
+                Pos.Z = -18.184f;
+
+                Rot.Y = -90f;
+
+                HeadRotation.Z = 0f;
+            } else if (PositionNumber == 4) {
+                PositionNumber = 5;
+
+                Pos.X = -7.827f;
+                Pos.Y = 1.566f;
+                Pos.Z = -4.684f;
+
+                Rot.Y = -90f;
+
+                HeadRotation.Z = 0f;
+            }
+
+            if (MoveTimer > 5f) {
+                MoveTimer = 0f;
+            }
+        }
+
+        MoveTimer += (float)delta;
+
+        Position = Pos;
+        RotationDegrees = Rot;
+
+        Head.RotationDegrees = HeadRotation;
+    }
+}
