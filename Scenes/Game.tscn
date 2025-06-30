@@ -389,8 +389,8 @@ shadow_enabled = true
 spot_range = 4096.0
 
 [node name="Floor" type="CSGBox3D" parent="Building/DiningRoom"]
-transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -10.245, -1.40588, -42.0478)
-size = Vector3(22.6936, 1, 25.9169)
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -10.245, -1.40588, -49.3325)
+size = Vector3(22.6936, 1, 40.4863)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Ceiling" type="CSGBox3D" parent="Building/DiningRoom"]
@@ -401,6 +401,12 @@ material = SubResource("StandardMaterial3D_cg2ps")
 [node name="FarWall" type="CSGBox3D" parent="Building/DiningRoom"]
 transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -16.3468, 4.44379, -54.2916)
 size = Vector3(16.1325, 10.7593, 1.42915)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="ArcadeEntrance" type="CSGBox3D" parent="Building/DiningRoom/FarWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.27273, -3.62554, 0)
+operation = 2
+size = Vector3(0.980917, 3.50821, 1.42915)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="LeftWall" type="CSGBox3D" parent="Building/DiningRoom"]
@@ -485,6 +491,36 @@ light_energy = 0.0
 shadow_enabled = true
 spot_range = 4096.0
 
+[node name="Arcade" type="Node3D" parent="Building"]
+
+[node name="CloseWall" type="CSGBox3D" parent="Building/Arcade"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -33.6593, 4.41538, -62.7954)
+size = Vector3(0.422467, 10.7822, 15.6728)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="FarWall" type="CSGBox3D" parent="Building/Arcade"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -3.99229, 4.41538, -62.7954)
+size = Vector3(0.422467, 10.7822, 15.6728)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="LeftWall" type="CSGBox3D" parent="Building/Arcade"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -18.247, 4.44379, -70.2593)
+size = Vector3(14.325, 10.7593, 1.42915)
+material = SubResource("StandardMaterial3D_iukft")
+
+[node name="Ceiling" type="CSGBox3D" parent="Building/Arcade"]
+transform = Transform3D(2.10265, 0, 0, 0, 1, 0, 0, 0, 1, -18.7421, 9.98177, -61.8337)
+size = Vector3(13.8565, 1, 15.4839)
+material = SubResource("StandardMaterial3D_cg2ps")
+
+[node name="Camera" type="Camera3D" parent="Building/Arcade"]
+transform = Transform3D(0.573048, 0.300369, -0.762493, 1.08211e-08, 0.930411, 0.366518, 0.819522, -0.210032, 0.53317, -32.4182, 7.13999, -56.5831)
+
+[node name="Light" type="SpotLight3D" parent="Building/Arcade/Camera"]
+light_energy = 0.0
+shadow_enabled = true
+spot_range = 4096.0
+
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Cameras" type="Control" parent="GUI"]
@@ -531,10 +567,10 @@ TargetCamera = 2
 
 [node name="Cam3Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -759.0
-offset_top = -655.0
-offset_right = -578.0
-offset_bottom = -542.0
+offset_left = -759.616
+offset_top = -567.308
+offset_right = -578.616
+offset_bottom = -454.308
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "3"
@@ -543,10 +579,10 @@ TargetCamera = 3
 
 [node name="Cam4Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -759.0
-offset_top = -904.0
-offset_right = -578.0
-offset_bottom = -791.0
+offset_left = -759.616
+offset_top = -750.0
+offset_right = -578.616
+offset_bottom = -637.0
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "4"
@@ -555,15 +591,27 @@ TargetCamera = 4
 
 [node name="Cam5Button" type="Button" parent="GUI/Cameras"]
 layout_mode = 0
-offset_left = -680.769
-offset_top = -1090.38
-offset_right = -499.769
-offset_bottom = -977.385
+offset_left = -269.231
+offset_top = -692.308
+offset_right = -88.2308
+offset_bottom = -579.313
 theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 66
 text = "5"
 script = ExtResource("7_71axn")
 TargetCamera = 5
+
+[node name="Cam6Button" type="Button" parent="GUI/Cameras"]
+layout_mode = 0
+offset_left = -544.231
+offset_top = -901.923
+offset_right = -363.231
+offset_bottom = -788.928
+theme_override_fonts/font = ExtResource("9_dahhg")
+theme_override_font_sizes/font_size = 66
+text = "6"
+script = ExtResource("7_71axn")
+TargetCamera = 6
 
 [node name="CameraToggle" type="Button" parent="GUI"]
 anchors_preset = 7
@@ -587,4 +635,5 @@ script = ExtResource("8_dahhg")
 [connection signal="button_up" from="GUI/Cameras/Cam3Button" to="GUI/Cameras/Cam3Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam4Button" to="GUI/Cameras/Cam4Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam5Button" to="GUI/Cameras/Cam5Button" method="_on_button_up"]
+[connection signal="button_up" from="GUI/Cameras/Cam6Button" to="GUI/Cameras/Cam6Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/CameraToggle" to="GUI/CameraToggle" method="_on_button_up"]

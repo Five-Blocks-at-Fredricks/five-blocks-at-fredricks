@@ -8,6 +8,7 @@ public partial class ActiveCameraUpdater : Node3D {
         Globals.Cameras.Add(GetNode<Camera3D>("/root/Game/Building/StorageRoom/Camera"));
         Globals.Cameras.Add(GetNode<Camera3D>("/root/Game/Building/DiningRoom/Camera"));
         Globals.Cameras.Add(GetNode<Camera3D>("/root/Game/Building/PartsAndService/Camera"));
+        Globals.Cameras.Add(GetNode<Camera3D>("/root/Game/Building/Arcade/Camera"));
     }
 
     public override void _Process(double delta) {
