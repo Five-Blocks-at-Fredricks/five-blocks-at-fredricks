@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=27 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -34,6 +34,21 @@ metallic = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2irst"]
 albedo_color = Color(0.329158, 0.329158, 0.329158, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxwew"]
+albedo_color = Color(0, 0, 0.282353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acvyw"]
+albedo_color = Color(0, 0, 0.282353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alh3a"]
+albedo_color = Color(0, 0, 0.282353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4q8tf"]
+albedo_color = Color(0, 0, 0.282353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3xnh"]
+albedo_color = Color(0, 0, 0.282353, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3cx6b"]
 font = ExtResource("9_dahhg")
@@ -469,6 +484,468 @@ light_color = Color(1, 0, 1, 1)
 light_energy = 5.0
 shadow_enabled = true
 spot_range = 19.131
+
+[node name="Tables" type="Node3D" parent="Building/DiningRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1088, 0, -42.7522)
+
+[node name="Row1" type="Node3D" parent="Building/DiningRoom/Tables"]
+
+[node name="Table1" type="Node3D" parent="Building/DiningRoom/Tables/Row1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2638, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table1"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table2" type="Node3D" parent="Building/DiningRoom/Tables/Row1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13145, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table2"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table3" type="Node3D" parent="Building/DiningRoom/Tables/Row1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06882, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table3"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table4" type="Node3D" parent="Building/DiningRoom/Tables/Row1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46701, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table4"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row1/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Row2" type="Node3D" parent="Building/DiningRoom/Tables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98473, 0, 4.70296)
+
+[node name="Table1" type="Node3D" parent="Building/DiningRoom/Tables/Row2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2638, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table1"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table2" type="Node3D" parent="Building/DiningRoom/Tables/Row2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13145, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table2"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table3" type="Node3D" parent="Building/DiningRoom/Tables/Row2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06882, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table3"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table4" type="Node3D" parent="Building/DiningRoom/Tables/Row2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46701, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table4"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row2/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Row3" type="Node3D" parent="Building/DiningRoom/Tables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.57997)
+
+[node name="Table1" type="Node3D" parent="Building/DiningRoom/Tables/Row3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2638, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table1"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table2" type="Node3D" parent="Building/DiningRoom/Tables/Row3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13145, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table2"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table3" type="Node3D" parent="Building/DiningRoom/Tables/Row3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06882, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table3"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table4" type="Node3D" parent="Building/DiningRoom/Tables/Row3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46701, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table4"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row3/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Row4" type="Node3D" parent="Building/DiningRoom/Tables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98473, 0, 14.6628)
+
+[node name="Table1" type="Node3D" parent="Building/DiningRoom/Tables/Row4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2638, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table1"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table2" type="Node3D" parent="Building/DiningRoom/Tables/Row4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13145, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table2"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table3" type="Node3D" parent="Building/DiningRoom/Tables/Row4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06882, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table3"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
+
+[node name="Table4" type="Node3D" parent="Building/DiningRoom/Tables/Row4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46701, -0.0232951, -6.16025)
+
+[node name="Main" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table4"]
+transform = Transform3D(1.6872, 0, 0, 0, 1, 0, 0, 0, 1, 0.119812, 0.358826, 0.260681)
+size = Vector3(2.20154, 0.282349, 2.16882)
+material = SubResource("StandardMaterial3D_wxwew")
+
+[node name="Leg1" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64974, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_acvyw")
+
+[node name="Leg2" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88846, -0.346551, -0.737671)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_alh3a")
+
+[node name="Leg3" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87479, -0.346551, 1.25793)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_4q8tf")
+
+[node name="Leg4" type="CSGBox3D" parent="Building/DiningRoom/Tables/Row4/Table4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.65325, -0.346551, 1.25605)
+size = Vector3(0.174011, 1.13284, 0.172119)
+material = SubResource("StandardMaterial3D_x3xnh")
 
 [node name="PartsAndService" type="Node3D" parent="Building"]
 
