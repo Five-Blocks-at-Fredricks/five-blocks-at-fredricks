@@ -1280,6 +1280,31 @@ theme_override_font_sizes/font_size = 81
 text = "Cameras"
 script = ExtResource("8_dahhg")
 
+[node name="Debug" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="GUI/Debug"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 32.0
+offset_right = 374.0
+offset_bottom = 116.0
+theme_override_font_sizes/font_size = 61
+text = "Ai: {AiLevel}"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Debug"]
+offset_left = 26.0
+offset_top = 128.0
+offset_right = 372.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 61
+text = "Random Value: {Value}"
+vertical_alignment = 1
+
 [connection signal="button_up" from="GUI/Cameras/Cam1Button" to="GUI/Cameras/Cam1Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam3Button" to="GUI/Cameras/Cam3Button" method="_on_button_up"]
