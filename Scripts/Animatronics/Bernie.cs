@@ -82,10 +82,10 @@ public partial class Bernie : Node3D {
 
                 HeadRotation.Z = 0f;
             }
+        }
 
-            if (MoveTimer > 5f) {
-                MoveTimer = 0f;
-            }
+        if (MoveTimer > 5f) {
+            MoveTimer = 0f;
         }
 
         MoveTimer += (float)delta;

@@ -1297,6 +1297,7 @@ text = "Ai: {AiLevel}"
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="GUI/Debug"]
+layout_mode = 0
 offset_left = 26.0
 offset_top = 128.0
 offset_right = 372.0
