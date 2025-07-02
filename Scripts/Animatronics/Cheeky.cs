@@ -88,6 +88,28 @@ public partial class Cheeky : Node3D {
                 Rot.Z = 0f;
 
                 HeadRotation.Z = 0f;
+            } else if (PositionNumber == 5) {
+                PositionNumber = 6;
+
+                Pos.X = 7.135f;
+                Pos.Y = 1.225f;
+                Pos.Z = -17.673f;
+
+                Rot.Y = -90f;
+                Rot.Z = 0f;
+
+                HeadRotation.Z = 0f;
+            } else if (PositionNumber == 6) {
+                PositionNumber = 7;
+
+                Pos.X = 7.135f;
+                Pos.Y = 1.225f;
+                Pos.Z = -4.123f;
+
+                Rot.Y = -90f;
+                Rot.Z = 0f;
+
+                HeadRotation.Z = 0f;
             }
         }
 
