@@ -69,7 +69,7 @@ script = ExtResource("1_iukft")
 transform = Transform3D(-0.249809, 0, -0.0097714, 0, 0.25, 0, 0.0097714, 0, -0.249809, -4.191, 3.14666, -41.583)
 
 [node name="bernie" parent="." instance=ExtResource("4_71axn")]
-transform = Transform3D(-0.25, 0, -3.7749e-08, 0, 0.25, 0, 3.7749e-08, 0, -0.25, -2.607, 3.089, -44.654)
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -2.607, 3.089, -44.654)
 script = ExtResource("5_alh3a")
 
 [node name="cheeky" parent="." instance=ExtResource("6_wxwew")]
@@ -276,7 +276,7 @@ size = Vector3(3.3936, 6.20347, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="LeftWall" type="CSGBox3D" parent="Building/OfficeHallway/LeftHallway"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.87603, 2.01784, -8.82998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72284, 2.01784, -8.82998)
 size = Vector3(1.21047, 5.81672, 20.207)
 material = SubResource("StandardMaterial3D_iukft")
 
@@ -291,7 +291,7 @@ size = Vector3(2.13592, 1, 7.59867)
 material = SubResource("StandardMaterial3D_cg2ps")
 
 [node name="Camera" type="Camera3D" parent="Building/OfficeHallway/LeftHallway"]
-transform = Transform3D(-0.888873, -0.187932, 0.417835, 6.21959e-09, 0.911998, 0.410194, 0.458153, -0.36461, 0.810651, 8.82322, 2.4986, 0.42904)
+transform = Transform3D(-0.888873, -0.187932, 0.417835, 6.21959e-09, 0.911998, 0.410194, 0.458153, -0.36461, 0.810651, 7.66797, 2.4986, 0.42904)
 
 [node name="Light" type="SpotLight3D" parent="Building/OfficeHallway/LeftHallway/Camera"]
 light_energy = 0.0
