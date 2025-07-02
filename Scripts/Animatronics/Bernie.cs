@@ -8,7 +8,7 @@ public partial class Bernie : Node3D {
     private float MoveTimer = 0f;
 
     public override void _Ready() {
-        Label BernieAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Label");
+        Label BernieAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Bernie/Label");
 
         BernieAiLevelLabel.Text = "Ai: " + AiLevel.ToString();
     }
@@ -22,7 +22,7 @@ public partial class Bernie : Node3D {
         Vector3 HeadRotation = Head.RotationDegrees;
 
         if (MoveTimer >= 5f) {
-            Label BernieMovementValueLabel = GetNode<Label>("/root/Game/GUI/Debug/Label2");
+            Label BernieMovementValueLabel = GetNode<Label>("/root/Game/GUI/Debug/Bernie/Label2");
 
             BernieMovementValueLabel.Text = "Random Value: " + MoveValue.ToString();
         }

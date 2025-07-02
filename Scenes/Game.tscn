@@ -1286,22 +1286,30 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="GUI/Debug"]
+[node name="Bernie" type="Control" parent="GUI/Debug"]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="GUI/Debug/Bernie"]
 layout_mode = 0
 offset_left = 28.0
 offset_top = 32.0
 offset_right = 374.0
 offset_bottom = 116.0
+theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
 theme_override_font_sizes/font_size = 61
 text = "Ai: {AiLevel}"
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="GUI/Debug"]
+[node name="Label2" type="Label" parent="GUI/Debug/Bernie"]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 128.0
-offset_right = 372.0
+offset_right = 696.0
 offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
 theme_override_font_sizes/font_size = 61
 text = "Random Value: {Value}"
 vertical_alignment = 1
