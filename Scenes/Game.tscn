@@ -155,14 +155,14 @@ size = Vector3(1.75146, 3.035, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="LeftDoor" type="CSGBox3D" parent="Building/Office"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70697, 3.73872, -1.66524)
-size = Vector3(0.243896, 3.035, 1.83958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70697, 3.95366, -1.66524)
+size = Vector3(0.243896, 3.46489, 1.83958)
 material = SubResource("StandardMaterial3D_dahhg")
 script = ExtResource("5_3so38")
 
 [node name="RightDoor" type="CSGBox3D" parent="Building/Office"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57306, 3.73872, -1.66524)
-size = Vector3(0.243896, 3.035, 1.83958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57306, 3.79107, -1.66524)
+size = Vector3(0.243896, 3.13969, 1.83958)
 material = SubResource("StandardMaterial3D_dahhg")
 script = ExtResource("5_3so38")
 
