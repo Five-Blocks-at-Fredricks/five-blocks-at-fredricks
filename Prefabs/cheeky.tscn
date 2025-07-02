@@ -3,3 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bjkxgpy7vom77" path="res://Models/cheeky.glb" id="1_daihf"]
 
 [node name="cheeky" instance=ExtResource("1_daihf")]
+
+[node name="Cube_003" parent="." index="1"]
+transform = Transform3D(1.11919, 0, 0, 0, 2.03378, 0, 0, 0, 0.67274, 0, 2.03378, -3.24143)
+
+[node name="Cube_004" parent="." index="5"]
+transform = Transform3D(1.11684, 0, -2.98023e-08, 0, 1.37943, 0, 5.96046e-08, 0, 0.67274, 0, 2.69762, 0)

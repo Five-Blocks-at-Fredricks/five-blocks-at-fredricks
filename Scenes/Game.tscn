@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=30 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cbro6cl8i3arg" path="res://Scripts/Animatronics/Bernie.cs" id="5_alh3a"]
 [ext_resource type="Script" uid="uid://cfnc04hf4ymhf" path="res://Scripts/CameraSystem/CameraButtonsUpdater.cs" id="6_bf53h"]
 [ext_resource type="PackedScene" uid="uid://d4b1q1cd03tuy" path="res://Prefabs/cheeky.tscn" id="6_wxwew"]
+[ext_resource type="Script" uid="uid://k51t86kp8drk" path="res://Scripts/Animatronics/Cheeky.cs" id="7_4q8tf"]
 [ext_resource type="Script" uid="uid://bxme60nrvn35c" path="res://Scripts/CameraSystem/CameraSwitcher.cs" id="7_71axn"]
 [ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraSystem/CameraToggle.cs" id="8_dahhg"]
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="9_dahhg"]
@@ -72,7 +73,8 @@ transform = Transform3D(-0.25, 0, -3.7749e-08, 0, 0.25, 0, 3.7749e-08, 0, -0.25,
 script = ExtResource("5_alh3a")
 
 [node name="cheeky" parent="." instance=ExtResource("6_wxwew")]
-transform = Transform3D(-0.25, 0, -3.7749e-08, 0, 0.25, 0, 3.7749e-08, 0, -0.25, -2.581, 3.14666, -38.513)
+transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -2.581, 3.147, -38.513)
+script = ExtResource("7_4q8tf")
 
 [node name="Building" type="Node3D" parent="."]
 
@@ -1310,6 +1312,35 @@ offset_top = 128.0
 offset_right = 696.0
 offset_bottom = 212.0
 theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
+theme_override_font_sizes/font_size = 61
+text = "Random Value: {Value}"
+vertical_alignment = 1
+
+[node name="Cheeky" type="Control" parent="GUI/Debug"]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 191.0
+offset_right = 40.0
+offset_bottom = 231.0
+
+[node name="Label" type="Label" parent="GUI/Debug/Cheeky"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 32.0
+offset_right = 374.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 61
+text = "Ai: {AiLevel}"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Debug/Cheeky"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 128.0
+offset_right = 696.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 61
 text = "Random Value: {Value}"
 vertical_alignment = 1
