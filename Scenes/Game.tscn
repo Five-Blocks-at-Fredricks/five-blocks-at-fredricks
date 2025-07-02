@@ -65,14 +65,14 @@ environment = SubResource("Environment_cg2ps")
 script = ExtResource("1_iukft")
 
 [node name="fredrick" parent="." instance=ExtResource("3_bf53h")]
-transform = Transform3D(-0.299771, 0, -0.0117257, 0, 0.3, 0, 0.0117257, 0, -0.299771, -4.19126, 3.4837, -41.583)
+transform = Transform3D(-0.249809, 0, -0.0097714, 0, 0.25, 0, 0.0097714, 0, -0.249809, -4.191, 3.14666, -41.583)
 
 [node name="bernie" parent="." instance=ExtResource("4_71axn")]
-transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.607, 3.542, -44.654)
+transform = Transform3D(-0.25, 0, -3.7749e-08, 0, 0.25, 0, 3.7749e-08, 0, -0.25, -2.607, 3.089, -44.654)
 script = ExtResource("5_alh3a")
 
 [node name="cheeky" parent="." instance=ExtResource("6_wxwew")]
-transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, -2.58105, 3.49344, -38.5134)
+transform = Transform3D(-0.25, 0, -3.7749e-08, 0, 0.25, 0, 3.7749e-08, 0, -0.25, -2.581, 3.14666, -38.513)
 
 [node name="Building" type="Node3D" parent="."]
 

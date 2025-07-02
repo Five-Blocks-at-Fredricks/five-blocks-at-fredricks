@@ -30,14 +30,14 @@ public partial class Bernie : Node3D {
         if (MoveValue <= AiLevel && MoveTimer >= 5f) {
             // Bernie's Starting Pos:
             // X: -2.607
-            // Y: 3.542
+            // Y: 3.089
             // Z: -44.654
 
             if (PositionNumber == 0) {
                 PositionNumber = 1;
 
                 Pos.X = -28.2f;
-                Pos.Y = 1.642f;
+                Pos.Y = 1.225f;
                 Pos.Z = -33.981f;
 
                 Rot.Y = 120f;
@@ -45,7 +45,7 @@ public partial class Bernie : Node3D {
                 PositionNumber = 2;
 
                 Pos.X = -25.278f;
-                Pos.Y = 1.566f;
+                Pos.Y = 1.225f;
                 Pos.Z = -14.419f;
 
                 Rot.Y = -133.1f;
@@ -55,7 +55,7 @@ public partial class Bernie : Node3D {
                 PositionNumber = 3;
 
                 Pos.X = -2.607f;
-                Pos.Y = 1.566f;
+                Pos.Y = 1.225f;
                 Pos.Z = -23.264f;
 
                 Rot.Y = -90f;
@@ -65,7 +65,7 @@ public partial class Bernie : Node3D {
                 PositionNumber = 4;
 
                 Pos.X = -7.827f;
-                Pos.Y = 1.566f;
+                Pos.Y = 1.225f;
                 Pos.Z = -18.184f;
 
                 Rot.Y = -90f;
@@ -75,7 +75,7 @@ public partial class Bernie : Node3D {
                 PositionNumber = 5;
 
                 Pos.X = -7.827f;
-                Pos.Y = 1.566f;
+                Pos.Y = 1.225f;
                 Pos.Z = -4.684f;
 
                 Rot.Y = -90f;
