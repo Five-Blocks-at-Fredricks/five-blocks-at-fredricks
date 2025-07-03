@@ -23,7 +23,7 @@ public partial class ActiveCameraUpdater : Node3D {
     public void SwitchCamera(Camera3D TargetCamera) {
         if (TargetCamera != null) {
             TargetCamera.MakeCurrent();
-            GD.Print("Switched to camera: " + TargetCamera.Name);
+            // GD.Print("Switched to camera: " + TargetCamera.Name);
         } else {
             GD.PrintErr("Cannot switch camera, TargetCamera is null.");
         }
