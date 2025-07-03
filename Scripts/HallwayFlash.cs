@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class HallwayFlash : OmniLight3D {
     private bool WasFlashLightKeybindPressed = false;

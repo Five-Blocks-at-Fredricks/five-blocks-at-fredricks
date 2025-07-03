@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class DoorLogic : CsgBox3D {
     public int DoorPower = 50000;
@@ -14,7 +13,7 @@ public partial class DoorLogic : CsgBox3D {
             IsClosed = false;
         }
 
-        if (Input.IsActionJustPressed(Name) && ((DoorPower > 0))) {
+        if (Input.IsActionJustPressed(Name) && (DoorPower > 0)) {
             if (IsClosed) {
                 IsClosed = false;
             } else {

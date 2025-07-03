@@ -7,9 +7,9 @@ public partial class LightFlicker : Node3D {
     [Export] public float MinFlickerSpeed = 0.05f;
     [Export] public float MaxFlickerSpeed = 0.1f;
 
-    [Export] public Godot.Collections.Array<NodePath> LightPaths = new();
-    [Export] public Godot.Collections.Array<float> MinEnergies = new();
-    [Export] public Godot.Collections.Array<float> MaxEnergies = new();
+    [Export] public Godot.Collections.Array<NodePath> LightPaths = [];
+    [Export] public Godot.Collections.Array<float> MinEnergies = [];
+    [Export] public Godot.Collections.Array<float> MaxEnergies = [];
 
     private class LightData {
         public Light3D Light;
@@ -18,10 +18,10 @@ public partial class LightFlicker : Node3D {
         public bool IsMin = true;
     }
 
-    private List<LightData> lights = new List<LightData>();
+    private List<LightData> lights = [];
     private float timer = 0f;
     private float flickerSpeed;
-    private Random random = new Random();
+    private Random random = new();
 
     public override void _Ready() {
         int count = Mathf.Min(LightPaths.Count, Mathf.Min(MinEnergies.Count, MaxEnergies.Count));
