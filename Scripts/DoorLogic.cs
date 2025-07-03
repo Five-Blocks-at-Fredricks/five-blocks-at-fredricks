@@ -2,12 +2,12 @@ using Godot;
 using System;
 
 public partial class DoorLogic : CsgBox3D {
-    private int DoorPower = 10000;
+    public int DoorPower = 50000;
     public bool IsClosed = false;
 
     public override void _Process(double delta) {
         if (IsClosed) {
-            DoorPower -= (int)delta;
+            DoorPower -= 1;
         }
 
         if (DoorPower == 0) {
