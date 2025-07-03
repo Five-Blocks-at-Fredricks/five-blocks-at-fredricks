@@ -6,8 +6,8 @@ public partial class PowerTextUpdater : Control {
         DoorLogic LeftDoor = GetNode<DoorLogic>("/root/Game/Building/Office/LeftDoor");
         DoorLogic RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
 
-        Label LeftDoorLabel = GetNode<Label>("/root/Game/GUI/Debug/Power/LeftDoor");
-        Label RightDoorLabel = GetNode<Label>("/root/Game/GUI/Debug/Power/RightDoor");
+        Label LeftDoorLabel = GetNode<Label>("LeftDoor");
+        Label RightDoorLabel = GetNode<Label>("RightDoor");
 
         LeftDoorLabel.Text = "Left Door Power: " + (LeftDoor.DoorPower * 100 / 50000.0) + "%";
         RightDoorLabel.Text = "Right Door Power: " + (RightDoor.DoorPower * 100 / 50000.0) + "%";

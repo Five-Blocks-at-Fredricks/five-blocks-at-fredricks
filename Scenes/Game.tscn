@@ -1283,78 +1283,16 @@ theme_override_font_sizes/font_size = 81
 text = "Cameras"
 script = ExtResource("8_dahhg")
 
-[node name="Debug" type="Control" parent="GUI"]
+[node name="PowerText" type="Control" parent="GUI"]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 14.0
 offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.52, 0.522359)
-
-[node name="Bernie" type="Control" parent="GUI/Debug"]
-layout_mode = 1
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="GUI/Debug/Bernie"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 32.0
-offset_right = 374.0
-offset_bottom = 116.0
-theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
-theme_override_font_sizes/font_size = 61
-text = "Ai: {AiLevel}"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="GUI/Debug/Bernie"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 128.0
-offset_right = 696.0
-offset_bottom = 212.0
-theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
-theme_override_font_sizes/font_size = 61
-text = "Random Value: {Value}"
-vertical_alignment = 1
-
-[node name="Cheeky" type="Control" parent="GUI/Debug"]
-layout_mode = 1
-anchors_preset = 0
-offset_top = 191.0
-offset_right = 40.0
-offset_bottom = 231.0
-
-[node name="Label" type="Label" parent="GUI/Debug/Cheeky"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 32.0
-offset_right = 374.0
-offset_bottom = 116.0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 61
-text = "Ai: {AiLevel}"
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="GUI/Debug/Cheeky"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 128.0
-offset_right = 696.0
-offset_bottom = 212.0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_font_sizes/font_size = 61
-text = "Random Value: {Value}"
-vertical_alignment = 1
-
-[node name="Power" type="Control" parent="GUI/Debug"]
-anchors_preset = 0
-offset_top = 418.0
-offset_right = 40.0
-offset_bottom = 458.0
+offset_bottom = 54.0
+scale = Vector2(0.68, 0.68)
 script = ExtResource("18_x3xnh")
 
-[node name="LeftDoor" type="Label" parent="GUI/Debug/Power"]
+[node name="LeftDoor" type="Label" parent="GUI/PowerText"]
 layout_mode = 0
 offset_left = 30.0
 offset_top = -2.0
@@ -1364,7 +1302,7 @@ theme_override_font_sizes/font_size = 61
 text = "Left Door Power: {Power}"
 vertical_alignment = 1
 
-[node name="RightDoor" type="Label" parent="GUI/Debug/Power"]
+[node name="RightDoor" type="Label" parent="GUI/PowerText"]
 layout_mode = 0
 offset_left = 30.0
 offset_top = 101.0
@@ -1372,6 +1310,82 @@ offset_right = 772.0
 offset_bottom = 185.0
 theme_override_font_sizes/font_size = 61
 text = "Right Door Power: {Power}"
+vertical_alignment = 1
+
+[node name="Debug" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.52, 0.522359)
+
+[node name="Bernie" type="Control" parent="GUI/Debug"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1426.15
+offset_right = 1466.15
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="GUI/Debug/Bernie"]
+layout_mode = 0
+offset_left = 28.923
+offset_top = 32.5447
+offset_right = 698.923
+offset_bottom = 116.545
+theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
+theme_override_font_sizes/font_size = 61
+text = "Ai: {AiLevel}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Debug/Bernie"]
+layout_mode = 0
+offset_left = 26.923
+offset_top = 128.545
+offset_right = 696.923
+offset_bottom = 212.545
+theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
+theme_override_font_sizes/font_size = 61
+text = "Random Value: {Value}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cheeky" type="Control" parent="GUI/Debug"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1422.31
+offset_top = 189.525
+offset_right = 1462.31
+offset_bottom = 229.525
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="GUI/Debug/Cheeky"]
+layout_mode = 0
+offset_left = 28.923
+offset_top = 32.5447
+offset_right = 698.923
+offset_bottom = 116.545
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 61
+text = "Ai: {AiLevel}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Debug/Cheeky"]
+layout_mode = 0
+offset_left = 26.923
+offset_top = 128.545
+offset_right = 696.923
+offset_bottom = 212.545
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 61
+text = "Random Value: {Value}"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="button_up" from="GUI/Cameras/Cam1Button" to="GUI/Cameras/Cam1Button" method="_on_button_up"]
