@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=32 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
 [ext_resource type="Script" uid="uid://clsybb6d1s1xa" path="res://Scripts/HallwayFlash.cs" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://dqqanhyctpibc" path="res://Prefabs/fredrick.tscn" id="3_bf53h"]
+[ext_resource type="Script" uid="uid://58f7aeq22tv0" path="res://Scripts/Animatronics/Fredrick.cs" id="4_8r6kd"]
 [ext_resource type="PackedScene" uid="uid://darkbydphnjla" path="res://Prefabs/bernie.tscn" id="4_71axn"]
 [ext_resource type="PackedScene" uid="uid://ce7d4l8llqmp1" path="res://Models/FlashLight.glb" id="4_fgofq"]
 [ext_resource type="Script" uid="uid://bbjqt5ybqq8fc" path="res://Scripts/LightFlicker.cs" id="5_2irst"]
@@ -67,7 +68,8 @@ environment = SubResource("Environment_cg2ps")
 script = ExtResource("1_iukft")
 
 [node name="fredrick" parent="." instance=ExtResource("3_bf53h")]
-transform = Transform3D(-0.249809, 0, -0.0097714, 0, 0.25, 0, 0.0097714, 0, -0.249809, -4.191, 3.14666, -41.583)
+transform = Transform3D(-0.25, 0, 2.18557e-08, 0, 0.25, 0, -2.18557e-08, 0, -0.25, -4.191, 3.147, -41.583)
+script = ExtResource("4_8r6kd")
 
 [node name="bernie" parent="." instance=ExtResource("4_71axn")]
 transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -2.607, 3.089, -44.654)
@@ -217,7 +219,7 @@ size = Vector3(1.75146, 3.035, 1.83958)
 material = SubResource("StandardMaterial3D_iukft")
 
 [node name="Light" type="OmniLight3D" parent="Building/OfficeHallway/CenterHallway"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0333, -13.6477)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0333, -12.7212)
 light_energy = 0.0
 shadow_enabled = true
 omni_range = 14.003
@@ -1383,6 +1385,41 @@ offset_top = 128.545
 offset_right = 696.923
 offset_bottom = 212.545
 theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 61
+text = "Random Value: {Value}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fredrick" type="Control" parent="GUI/Debug"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1422.31
+offset_top = 386.707
+offset_right = 1462.31
+offset_bottom = 426.707
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="GUI/Debug/Fredrick"]
+layout_mode = 0
+offset_left = 28.923
+offset_top = 32.5447
+offset_right = 698.923
+offset_bottom = 116.545
+theme_override_colors/font_color = Color(0.448906, 0.259724, 2.40654e-07, 1)
+theme_override_font_sizes/font_size = 61
+text = "Ai: {AiLevel}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Debug/Fredrick"]
+layout_mode = 0
+offset_left = 26.923
+offset_top = 128.545
+offset_right = 696.923
+offset_bottom = 212.545
+theme_override_colors/font_color = Color(0.448906, 0.259724, 2.40654e-07, 1)
 theme_override_font_sizes/font_size = 61
 text = "Random Value: {Value}"
 horizontal_alignment = 1
