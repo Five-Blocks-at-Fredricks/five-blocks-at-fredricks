@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 public partial class Fredrick : Node3D {
-    private int AiLevel = 20;
+    private int AiLevel = 5;
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
