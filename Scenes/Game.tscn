@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=33 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cfuhxa0ms8sco" path="res://Models/arcade-machine2.glb" id="10_acvyw"]
 [ext_resource type="Texture2D" uid="uid://d0y87j81ygtye" path="res://Images/CameraMap.png" id="12_3cx6b"]
 [ext_resource type="Script" uid="uid://b1blf6rlmheot" path="res://Scripts/PowerTextUpdater.cs" id="18_x3xnh"]
+[ext_resource type="PackedScene" uid="uid://j1sr6mxyvv7x" path="res://Prefabs/dingus.tscn" id="20_tfod6"]
 
 [sub_resource type="Environment" id="Environment_cg2ps"]
 ambient_light_energy = 0.0
@@ -1424,6 +1425,9 @@ theme_override_font_sizes/font_size = 61
 text = "Random Value: {Value}"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="dingus" parent="." instance=ExtResource("20_tfod6")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.14749, 1.225, -40.2246)
 
 [connection signal="button_up" from="GUI/Cameras/Cam1Button" to="GUI/Cameras/Cam1Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]

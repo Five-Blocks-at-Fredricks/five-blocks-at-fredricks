@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://j1sr6mxyvv7x"]
+
+[ext_resource type="PackedScene" uid="uid://3ibfbv4vfhvx" path="res://Models/dingus.glb" id="1_d7ipo"]
+
+[node name="dingus" instance=ExtResource("1_d7ipo")]
