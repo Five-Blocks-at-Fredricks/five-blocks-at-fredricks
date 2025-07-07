@@ -80,6 +80,9 @@ script = ExtResource("5_alh3a")
 transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, -2.581, 3.147, -38.513)
 script = ExtResource("7_4q8tf")
 
+[node name="dingus" parent="." instance=ExtResource("20_tfod6")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.14749, 1.225, -40.2246)
+
 [node name="Building" type="Node3D" parent="."]
 
 [node name="Office" type="Node3D" parent="Building"]
@@ -1425,9 +1428,6 @@ theme_override_font_sizes/font_size = 61
 text = "Random Value: {Value}"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="dingus" parent="." instance=ExtResource("20_tfod6")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.14749, 1.225, -40.2246)
 
 [connection signal="button_up" from="GUI/Cameras/Cam1Button" to="GUI/Cameras/Cam1Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]
