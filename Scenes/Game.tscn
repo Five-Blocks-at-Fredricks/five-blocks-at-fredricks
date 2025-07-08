@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=34 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://bubkqoihqefk3" path="res://Scripts/CameraSystem/CameraToggle.cs" id="8_dahhg"]
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="9_dahhg"]
 [ext_resource type="PackedScene" uid="uid://cfuhxa0ms8sco" path="res://Models/arcade-machine2.glb" id="10_acvyw"]
+[ext_resource type="Script" uid="uid://o4a072yuuik2" path="res://Scripts/Animatronics/Dingus.cs" id="10_rajel"]
 [ext_resource type="Texture2D" uid="uid://d0y87j81ygtye" path="res://Images/CameraMap.png" id="12_3cx6b"]
 [ext_resource type="Script" uid="uid://b1blf6rlmheot" path="res://Scripts/PowerTextUpdater.cs" id="18_x3xnh"]
 [ext_resource type="PackedScene" uid="uid://j1sr6mxyvv7x" path="res://Prefabs/dingus.tscn" id="20_tfod6"]
@@ -81,7 +82,8 @@ transform = Transform3D(-0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.2
 script = ExtResource("7_4q8tf")
 
 [node name="dingus" parent="." instance=ExtResource("20_tfod6")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.14749, 1.225, -40.2246)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.147, 1.225, -40.225)
+script = ExtResource("10_rajel")
 
 [node name="Building" type="Node3D" parent="."]
 
@@ -1424,6 +1426,41 @@ offset_top = 128.545
 offset_right = 696.923
 offset_bottom = 212.545
 theme_override_colors/font_color = Color(0.448906, 0.259724, 2.40654e-07, 1)
+theme_override_font_sizes/font_size = 61
+text = "Random Value: {Value}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dingus" type="Control" parent="GUI/Debug"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1422.31
+offset_top = 583.89
+offset_right = 1462.31
+offset_bottom = 623.89
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="GUI/Debug/Dingus"]
+layout_mode = 0
+offset_left = 28.923
+offset_top = 32.5447
+offset_right = 698.923
+offset_bottom = 116.545
+theme_override_colors/font_color = Color(0.347965, 0.00132841, 0.776797, 1)
+theme_override_font_sizes/font_size = 61
+text = "Ai: {AiLevel}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="GUI/Debug/Dingus"]
+layout_mode = 0
+offset_left = 26.923
+offset_top = 128.545
+offset_right = 696.923
+offset_bottom = 212.545
+theme_override_colors/font_color = Color(0.347965, 0.00132841, 0.776797, 1)
 theme_override_font_sizes/font_size = 61
 text = "Random Value: {Value}"
 horizontal_alignment = 1
