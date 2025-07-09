@@ -6,6 +6,7 @@ public partial class Bernie : Node3D {
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
+    private float JumpScareTimer = 0f;
 
     public override void _Ready() {
         Label BernieAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Bernie/Label");
@@ -81,7 +82,13 @@ public partial class Bernie : Node3D {
                 Rot.Y = -90f;
 
                 HeadRotation.Z = 0f;
+            } else if (PositionNumber == 5) {
+                PositionNumber = 6;
             }
+        }
+
+        if (PositionNumber == 6) {
+            Jumpscare((float)delta, ref Pos);
         }
 
         if (MoveTimer > 5f) {
@@ -94,5 +101,23 @@ public partial class Bernie : Node3D {
         RotationDegrees = Rot;
 
         Head.RotationDegrees = HeadRotation;
+    }
+
+    private void Jumpscare(float delta, ref Vector3 Pos) {
+        if (JumpScareTimer < 1f) {
+            Pos = new Vector3(0f, 0f, Pos.Z);
+            Pos.Z += 3.5f * delta;
+        } else {
+            Globals.ResetGlobals();
+            GetTree().ChangeSceneToFile("res://Scenes/GameOver.tscn");
+            JumpScareTimer = 0f;
+        }
+
+        JumpScareTimer += delta;
+    }
+
+    private void ResetScene() {
+        var currentScene = GetTree().CurrentScene.SceneFilePath;
+        GetTree().ChangeSceneToFile(currentScene);
     }
 }
