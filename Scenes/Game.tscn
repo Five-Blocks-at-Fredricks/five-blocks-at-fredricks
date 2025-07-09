@@ -425,6 +425,9 @@ light_energy = 0.1
 transform = Transform3D(10, 0, -4.76837e-07, 0, 10, 0, 7.15256e-07, 0, 10, 0.161743, 0, -3.51687)
 light_energy = 5.2
 
+[node name="Doggy" parent="Building/StorageRoom" instance=ExtResource("23_lbihj")]
+transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -27.1458, -0.135848, -21.2417)
+
 [node name="DiningRoom" type="Node3D" parent="Building"]
 
 [node name="Camera" type="Camera3D" parent="Building/DiningRoom"]
@@ -1474,9 +1477,6 @@ theme_override_font_sizes/font_size = 61
 text = "Random Value: {Value}"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="doggy" parent="." instance=ExtResource("23_lbihj")]
-transform = Transform3D(-8.74228e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, -8.74228e-09, -27.1458, -0.135848, -21.2417)
 
 [connection signal="button_up" from="GUI/Cameras/Cam1Button" to="GUI/Cameras/Cam1Button" method="_on_button_up"]
 [connection signal="button_up" from="GUI/Cameras/Cam2Button" to="GUI/Cameras/Cam2Button" method="_on_button_up"]
