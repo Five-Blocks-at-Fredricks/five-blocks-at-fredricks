@@ -83,7 +83,18 @@ public partial class Bernie : Node3D {
 
                 HeadRotation.Z = 0f;
             } else if (PositionNumber == 5) {
-                PositionNumber = 6;
+                DoorLogic LeftDoor = GetNode<DoorLogic>("/root/Game/Building/Office/LeftDoor");
+                if (LeftDoor.IsClosed) {
+                    PositionNumber = 1;
+
+                    Pos.X = -28.2f;
+                    Pos.Y = 1.225f;
+                    Pos.Z = -33.981f;
+
+                    Rot.Y = 120f;
+                } else {
+                    PositionNumber = 6;
+                }
             }
         }
 
