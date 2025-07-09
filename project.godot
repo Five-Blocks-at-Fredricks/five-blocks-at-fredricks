@@ -31,6 +31,10 @@ window/size/borderless=true
 
 project/assembly_name="Five Blocks at Fredricks"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 LeftDoor={
