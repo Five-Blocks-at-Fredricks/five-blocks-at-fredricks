@@ -115,6 +115,8 @@ public partial class Bernie : Node3D {
     }
 
     private void Jumpscare(float delta, ref Vector3 Pos) {
+        AudioStreamPlayer3D JumpscarePlayer = GetNode<AudioStreamPlayer3D>("AudioPlayer");
+
         if (JumpScareTimer < 1f) {
             Pos = new Vector3(0f, 0f, Pos.Z);
             Pos.Z += 3.5f * delta;
@@ -122,6 +124,10 @@ public partial class Bernie : Node3D {
             Globals.ResetGlobals();
             GetTree().ChangeSceneToFile("res://Scenes/GameOver.tscn");
             JumpScareTimer = 0f;
+        }
+
+        if (JumpScareTimer == 0f) {
+            JumpscarePlayer.Play();
         }
 
         JumpScareTimer += delta;
