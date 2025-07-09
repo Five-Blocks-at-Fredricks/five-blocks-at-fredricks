@@ -6,6 +6,7 @@ public partial class Cheeky : Node3D {
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
+    private float JumpScareTimer = 0f;
 
     public override void _Ready() {
         Label CheekyAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Cheeky/Label");
@@ -110,7 +111,24 @@ public partial class Cheeky : Node3D {
                 Rot.Z = 0f;
 
                 HeadRotation.Z = 0f;
+            } else if (PositionNumber == 7) {
+                DoorLogic RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
+                if (RightDoor.IsClosed) {
+                    PositionNumber = 1;
+
+                    Pos.X = -17.729f;
+                    Pos.Y = 1.225f;
+                    Pos.Z = -46.571f;
+
+                    Rot.Y = 105f;
+                } else {
+                    PositionNumber = 8;
+                }
             }
+        }
+
+        if (PositionNumber == 8) {
+            Jumpscare((float)delta, ref Pos);
         }
 
         if (MoveTimer > 5f) {
@@ -123,5 +141,24 @@ public partial class Cheeky : Node3D {
         RotationDegrees = Rot;
 
         Head.RotationDegrees = HeadRotation;
+    }
+
+    private void Jumpscare(float delta, ref Vector3 Pos) {
+        AudioStreamPlayer3D JumpscarePlayer = GetNode<AudioStreamPlayer3D>("AudioPlayer");
+
+        if (JumpScareTimer < 1f) {
+            Pos = new Vector3(0f, 0f, Pos.Z);
+            Pos.Z += 3.5f * delta;
+        } else {
+            Globals.ResetGlobals();
+            GetTree().ChangeSceneToFile("res://Scenes/GameOver.tscn");
+            JumpScareTimer = 0f;
+        }
+
+        if (JumpScareTimer == 0f) {
+            JumpscarePlayer.Play();
+        }
+
+        JumpScareTimer += delta;
     }
 }
