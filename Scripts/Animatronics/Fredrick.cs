@@ -8,6 +8,8 @@ public partial class Fredrick : Node3D {
     private float MoveTimer = 0f;
     private DoorLogic LeftDoor = new();
     private DoorLogic RightDoor = new();
+    private float FlashTimer = 0f;
+    private bool CountTimer = false;
 
     public override void _Ready() {
         Label FredrickAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Fredrick/Label");
@@ -110,6 +112,27 @@ public partial class Fredrick : Node3D {
                 LeftDoor.DoorPower = 0;
                 RightDoor.DoorPower = 0;
             }
+        }
+
+        if (Globals.ActiveCamera == 0 && Input.IsKeyPressed((Key)Key.Ctrl) && PositionNumber == 4) {
+            CountTimer = true;
+        }
+
+        if (CountTimer) {
+            FlashTimer += (float)delta;
+        }
+
+        if (FlashTimer > 1f) {
+            PositionNumber = 1;
+
+            Pos.X = -24.296f;
+            Pos.Y = 1.225f;
+            Pos.Z = -36.53f;
+
+            Rot.Y = -180f;
+
+            CountTimer = false;
+            FlashTimer = 0f;
         }
 
         if (MoveTimer > 5f) {
