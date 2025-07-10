@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 public partial class Dingus : Node3D {
-    private int AiLevel = 5;
+    private int AiLevel = 20;
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
@@ -51,6 +51,41 @@ public partial class Dingus : Node3D {
                 Rot.Y = 180f;
 
                 HeadRotation.Z = 0f;
+            } else if (PositionNumber == 2) {
+                int HallwayNumber = random.Next(0, 3);
+                if (HallwayNumber == 0) {
+                    PositionNumber = 3;
+
+                    Pos.X = 0f;
+                    Pos.Y = 1.225f;
+                    Pos.Z = -18.77f;
+
+                    Rot.Y = -90f;
+                    Rot.Z = 0f;
+
+                    HeadRotation.Z = 0f;
+                } else if (HallwayNumber == 1) {
+                    PositionNumber = 4;
+
+                    Pos.X = -7.166f;
+                    Pos.Y = 1.225f;
+                    Pos.Z = -6.684f;
+
+                    Rot.Y = -90f;
+
+                    HeadRotation.Z = 0f;
+                } else if (HallwayNumber == 2) {
+                    PositionNumber = 5;
+
+                    Pos.X = 7.135f;
+                    Pos.Y = 1.225f;
+                    Pos.Z = -6.123f;
+
+                    Rot.Y = -90f;
+                    Rot.Z = 0f;
+
+                    HeadRotation.Z = 0f;
+                }
             }
         }
 
