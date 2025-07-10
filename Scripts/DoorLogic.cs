@@ -9,7 +9,7 @@ public partial class DoorLogic : CsgBox3D {
             DoorPower -= 1;
         }
 
-        if (DoorPower == 0) {
+        if (DoorPower < 1) {
             IsClosed = false;
         }
 
