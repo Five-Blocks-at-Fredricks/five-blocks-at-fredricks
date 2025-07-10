@@ -65,7 +65,7 @@ public partial class Bernie : Node3D {
             } else if (PositionNumber == 3) {
                 PositionNumber = 4;
 
-                Pos.X = -7.827f;
+                Pos.X = -7.166f;
                 Pos.Y = 1.225f;
                 Pos.Z = -18.184f;
 
