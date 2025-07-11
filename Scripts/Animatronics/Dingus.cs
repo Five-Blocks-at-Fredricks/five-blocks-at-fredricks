@@ -169,6 +169,7 @@ public partial class Dingus : Node3D {
         }
 
         if (JumpScareTimer == 0f) {
+            Pos.Z = -6.684f;
             Globals.ResetGlobals();
             JumpscarePlayer.Play();
         }
