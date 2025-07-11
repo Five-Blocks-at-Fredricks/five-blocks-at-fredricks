@@ -162,7 +162,7 @@ public partial class Dingus : Node3D {
 
         if (JumpScareTimer < 1f) {
             Pos = new Vector3(0f, 0f, Pos.Z);
-            Pos.Z += 3.5f * delta;
+            Pos.Z += 5.0f * delta;
         } else {
             GetTree().ChangeSceneToFile("res://Scenes/GameOver.tscn");
             JumpScareTimer = 0f;
