@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://clc33jgwjgsmy"]
+
+[ext_resource type="Script" uid="uid://bkkkxk6a442ik" path="res://Scripts/CompleteLabelUpdater.cs" id="1_cr5ke"]
+[ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_xv6p8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cr5ke"]
+font = ExtResource("1_xv6p8")
+font_size = 172
+
+[sub_resource type="LabelSettings" id="LabelSettings_on4yq"]
+font = ExtResource("1_xv6p8")
+font_size = 172
+
+[node name="6amScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="CenterContainer"]
+layout_mode = 2
+script = ExtResource("1_cr5ke")
+
+[node name="5AMLabel" type="Label" parent="CenterContainer/Control"]
+layout_mode = 0
+offset_left = -217.0
+offset_top = -120.5
+offset_right = 217.0
+offset_bottom = 120.5
+rotation = 6.28319
+text = "5 AM"
+label_settings = SubResource("LabelSettings_cr5ke")
+
+[node name="6AMLabel" type="Label" parent="CenterContainer/Control"]
+offset_left = -217.0
+offset_top = -120.5
+offset_right = 217.0
+offset_bottom = 120.5
+text = "6 AM"
+label_settings = SubResource("LabelSettings_on4yq")

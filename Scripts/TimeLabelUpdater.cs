@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class TimeLabelUpdater : Label {
     private string DisplayedTime = "12 AM";
@@ -27,7 +26,8 @@ public partial class TimeLabelUpdater : Label {
         } else if (Globals.Time == 300) {
             DisplayedTime = "5 AM";
         } else if (Globals.Time == 360) {
-            DisplayedTime = "6 AM";
+            Globals.ResetGlobals();
+            GetTree().ChangeSceneToFile("res://Scenes/6AMScreen.tscn");
         }
 
         Text = DisplayedTime;
