@@ -7,5 +7,6 @@ public partial class CameraSwitcher : Button {
 
     private void _on_button_up() {
         Globals.ActiveCamera = TargetCamera;
+        Globals.PreviousCam = TargetCamera;
     }
 }
