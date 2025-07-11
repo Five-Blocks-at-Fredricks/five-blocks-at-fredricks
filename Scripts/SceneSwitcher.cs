@@ -18,5 +18,9 @@ public partial class SceneSwitcher : Button {
         if (error != Error.Ok) {
             GD.PrintErr("Failed to change scene: " + error);
         }
+
+        if (ScenePath == "res://Scenes/Game.tscn") {
+            Globals.MovableCamera = true;
+        }
     }
 }

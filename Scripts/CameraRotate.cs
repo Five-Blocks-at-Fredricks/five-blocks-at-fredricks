@@ -12,5 +12,9 @@ public partial class CameraRotate : Camera3D {
         if (MousePos.X < ScreenWidth * 0.25 && RotationDegrees.Y < 42.238636) {
             RotationDegrees = new Vector3(RotationDegrees.X, RotationDegrees.Y + 90f * (float)delta, RotationDegrees.Z);
         }
+
+        if (!Globals.MovableCamera) {
+            RotationDegrees = new Vector3(RotationDegrees.X, 0f, RotationDegrees.Z);
+        }
     }
 }
