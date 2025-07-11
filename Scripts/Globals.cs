@@ -10,6 +10,7 @@ public partial class Globals : Node {
     public static void ResetGlobals() {
         ActiveCamera = 0;
         MovableCamera = false;
+        Time = 0;
         Cameras.Clear();
     }
 }
