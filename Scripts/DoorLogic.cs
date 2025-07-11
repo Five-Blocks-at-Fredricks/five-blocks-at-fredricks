@@ -6,7 +6,7 @@ public partial class DoorLogic : CsgBox3D {
 
     public override void _Process(double delta) {
         if (IsClosed) {
-            DoorPower -= 1;
+            DoorPower -= 5;
         }
 
         if (DoorPower < 1) {
