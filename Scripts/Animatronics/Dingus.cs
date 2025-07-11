@@ -6,6 +6,9 @@ public partial class Dingus : Node3D {
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
+    private float JumpScareTimer = 0f;
+    private float FlashTimer = 0f;
+    private bool CountTimer = false;
 
     public override void _Ready() {
         Label DingusAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Dingus/Label");
@@ -86,7 +89,60 @@ public partial class Dingus : Node3D {
 
                     HeadRotation.Z = 0f;
                 }
+            } else if (PositionNumber == 3) {
+                PositionNumber = 6;
+            } else if (PositionNumber == 4) {
+                DoorLogic LeftDoor = GetNode<DoorLogic>("/root/Game/Building/Office/LeftDoor");
+                if (LeftDoor.IsClosed) {
+                    PositionNumber = 0;
+
+                    Pos.X = 2.147f;
+                    Pos.Y = 1.225f;
+                    Pos.Z = -40.225f;
+
+                    Rot.Y = 0f;
+                } else {
+                    PositionNumber = 6;
+                }
+            } else if (PositionNumber == 5) {
+                DoorLogic RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
+                if (RightDoor.IsClosed) {
+                    PositionNumber = 0;
+
+                    Pos.X = 2.147f;
+                    Pos.Y = 1.225f;
+                    Pos.Z = -40.225f;
+
+                    Rot.Y = 0f;
+                } else {
+                    PositionNumber = 6;
+                }
             }
+        }
+
+        if (PositionNumber == 6) {
+            Jumpscare((float)delta, ref Pos);
+        }
+
+        if (Globals.ActiveCamera == 0 && Input.IsKeyPressed((Key)Key.Ctrl) && PositionNumber == 3) {
+            CountTimer = true;
+        }
+
+        if (CountTimer) {
+            FlashTimer += (float)delta;
+        }
+
+        if (FlashTimer > 1f) {
+            PositionNumber = 0;
+
+            Pos.X = 2.147f;
+            Pos.Y = 1.225f;
+            Pos.Z = -40.225f;
+
+            Rot.Y = 0f;
+
+            CountTimer = false;
+            FlashTimer = 0f;
         }
 
         if (MoveTimer > 5f) {
@@ -99,5 +155,24 @@ public partial class Dingus : Node3D {
         RotationDegrees = Rot;
 
         Head.RotationDegrees = HeadRotation;
+    }
+
+    private void Jumpscare(float delta, ref Vector3 Pos) {
+        AudioStreamPlayer3D JumpscarePlayer = GetNode<AudioStreamPlayer3D>("AudioPlayer");
+
+        if (JumpScareTimer < 1f) {
+            Pos = new Vector3(0f, 0f, Pos.Z);
+            Pos.Z += 3.5f * delta;
+        } else {
+            Globals.ResetGlobals();
+            GetTree().ChangeSceneToFile("res://Scenes/GameOver.tscn");
+            JumpScareTimer = 0f;
+        }
+
+        if (JumpScareTimer == 0f) {
+            JumpscarePlayer.Play();
+        }
+
+        JumpScareTimer += delta;
     }
 }

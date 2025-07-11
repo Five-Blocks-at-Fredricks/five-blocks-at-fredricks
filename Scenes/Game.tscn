@@ -100,6 +100,11 @@ volume_db = 80.0
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 2.147, 1.225, -40.225)
 script = ExtResource("10_rajel")
 
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="dingus"]
+transform = Transform3D(-4, 0, -3.49691e-07, 0, 4, 0, 3.49691e-07, 0, -4, -19.016, 7.456, -17.716)
+stream = ExtResource("7_vvhu1")
+volume_db = 80.0
+
 [node name="Building" type="Node3D" parent="."]
 
 [node name="Office" type="Node3D" parent="Building"]
