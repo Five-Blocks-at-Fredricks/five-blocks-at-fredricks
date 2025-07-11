@@ -150,12 +150,12 @@ public partial class Cheeky : Node3D {
             Pos = new Vector3(0f, 0f, Pos.Z);
             Pos.Z += 3.5f * delta;
         } else {
-            Globals.ResetGlobals();
             GetTree().ChangeSceneToFile("res://Scenes/GameOver.tscn");
             JumpScareTimer = 0f;
         }
 
         if (JumpScareTimer == 0f) {
+            Globals.ResetGlobals();
             JumpscarePlayer.Play();
         }
 
