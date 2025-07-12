@@ -68,16 +68,29 @@ text = "Fredricks"
 label_settings = SubResource("LabelSettings_853f1")
 vertical_alignment = 1
 
-[node name="PlayButton" type="Button" parent="UiContainer"]
+[node name="NewGameButton" type="Button" parent="UiContainer"]
 layout_mode = 0
-offset_left = 34.0
-offset_top = 442.0
-offset_right = 317.0
-offset_bottom = 590.0
+offset_left = 34.125
+offset_top = 421.646
+offset_right = 317.125
+offset_bottom = 504.646
 theme_override_fonts/font = ExtResource("1_tt5f1")
 theme_override_font_sizes/font_size = 41
 toggle_mode = true
-text = "Play!!!11!!"
+text = "New Game"
+script = ExtResource("2_853f1")
+ScenePath = "res://Scenes/Game.tscn"
+
+[node name="ContinueButton" type="Button" parent="UiContainer"]
+layout_mode = 0
+offset_left = 34.125
+offset_top = 517.08
+offset_right = 317.125
+offset_bottom = 600.08
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 41
+toggle_mode = true
+text = "Continue"
 script = ExtResource("2_853f1")
 ScenePath = "res://Scenes/Game.tscn"
 
