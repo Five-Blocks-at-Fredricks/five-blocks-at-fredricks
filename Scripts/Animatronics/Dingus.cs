@@ -2,7 +2,6 @@ using Godot;
 using System;
 
 public partial class Dingus : Node3D {
-    private int AiLevel = 5;
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
@@ -13,7 +12,7 @@ public partial class Dingus : Node3D {
     public override void _Ready() {
         Label DingusAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Dingus/Label");
 
-        DingusAiLevelLabel.Text = "Ai: " + AiLevel.ToString();
+        DingusAiLevelLabel.Text = "Ai: " + Globals.DingusAiLevel.ToString();
     }
 
     public override void _Process(double delta) {
@@ -30,7 +29,7 @@ public partial class Dingus : Node3D {
             DingusMovementValueLabel.Text = "Random Value: " + MoveValue.ToString();
         }
 
-        if (MoveValue <= AiLevel && MoveTimer >= 5f) {
+        if (MoveValue <= Globals.DingusAiLevel && MoveTimer >= 5f) {
             // Dingus's Starting Pos:
             // X: 2.147
             // Y: 1.225

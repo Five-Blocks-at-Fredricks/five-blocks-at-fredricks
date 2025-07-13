@@ -2,7 +2,6 @@ using Godot;
 using System;
 
 public partial class Fredrick : Node3D {
-    private int AiLevel = 5;
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
@@ -14,7 +13,7 @@ public partial class Fredrick : Node3D {
     public override void _Ready() {
         Label FredrickAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Fredrick/Label");
 
-        FredrickAiLevelLabel.Text = "Ai: " + AiLevel.ToString();
+        FredrickAiLevelLabel.Text = "Ai: " + Globals.FredrickAiLevel.ToString();
 
         LeftDoor = GetNode<DoorLogic>("/root/Game/Building/Office/LeftDoor");
         RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
@@ -42,7 +41,7 @@ public partial class Fredrick : Node3D {
             FredrickMovementValueLabel.Text = "Random Value: " + MoveValue.ToString();
         }
 
-        if (MoveValue <= AiLevel && MoveTimer >= 5f) {
+        if (MoveValue <= Globals.FredrickAiLevel && MoveTimer >= 5f) {
             // Fredrick's Starting Pos:
             // X: -4.191
             // Y: 3.147

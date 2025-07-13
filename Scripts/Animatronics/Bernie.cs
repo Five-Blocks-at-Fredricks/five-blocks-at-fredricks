@@ -2,7 +2,6 @@ using Godot;
 using System;
 
 public partial class Bernie : Node3D {
-    private int AiLevel = 5;
     private int PositionNumber = 0;
     private Random random = new Random();
     private float MoveTimer = 0f;
@@ -11,7 +10,7 @@ public partial class Bernie : Node3D {
     public override void _Ready() {
         Label BernieAiLevelLabel = GetNode<Label>("/root/Game/GUI/Debug/Bernie/Label");
 
-        BernieAiLevelLabel.Text = "Ai: " + AiLevel.ToString();
+        BernieAiLevelLabel.Text = "Ai: " + Globals.BernieAiLevel.ToString();
     }
 
     public override void _Process(double delta) {
@@ -28,7 +27,7 @@ public partial class Bernie : Node3D {
             BernieMovementValueLabel.Text = "Random Value: " + MoveValue.ToString();
         }
 
-        if (MoveValue <= AiLevel && MoveTimer >= 5f) {
+        if (MoveValue <= Globals.BernieAiLevel && MoveTimer >= 5f) {
             // Bernie's Starting Pos:
             // X: -2.607
             // Y: 3.089
