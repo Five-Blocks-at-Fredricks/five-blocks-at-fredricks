@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs7u2sn1giu57"]
+[gd_scene load_steps=8 format=3 uid="uid://cs7u2sn1giu57"]
 
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://c4l00u6yvko1v" path="res://Scripts/SceneSwitcher.cs" id="2_853f1"]
 [ext_resource type="AudioStream" uid="uid://gm8ulvgmouba" path="res://Audio/MenuMusic.mp3" id="3_8saeu"]
 [ext_resource type="Script" uid="uid://d4d03wteb6vnu" path="res://Scripts/NewGameLogic.cs" id="3_df05h"]
+[ext_resource type="Script" uid="uid://cs75mm1t6khdg" path="res://Scripts/ContinueLogic.cs" id="4_8um5k"]
 [ext_resource type="Texture2D" uid="uid://brrdv5uye6stb" path="res://Images/MainMenuFredrick.png" id="4_ghw46"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_853f1"]
@@ -101,6 +102,12 @@ text = "Continue"
 script = ExtResource("2_853f1")
 ScenePath = "res://Scenes/Game.tscn"
 
+[node name="ContinueLogic" type="Control" parent="UiContainer/ContinueButton"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_8um5k")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8saeu")
 autoplay = true
@@ -111,3 +118,4 @@ scale = Vector2(1.84, 1.84)
 texture = ExtResource("4_ghw46")
 
 [connection signal="button_up" from="UiContainer/NewGameButton" to="UiContainer/NewGameButton/NewGameLogic" method="_on_new_game_button_button_up"]
+[connection signal="button_up" from="UiContainer/ContinueButton" to="UiContainer/ContinueButton/ContinueLogic" method="_on_continue_button_button_up"]

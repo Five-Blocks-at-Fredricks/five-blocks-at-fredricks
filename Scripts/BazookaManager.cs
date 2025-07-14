@@ -1,10 +1,10 @@
 using Godot;
 
 public partial class BazookaManager : Node {
-    public static string[] saveIds = [];
+    public static string LastBeatenNight = "lastbeatennight";
 
-    public static string Read(int saveId, string defaultValue) {
-        string path = "user://" + saveIds[saveId] + ".txt";
+    public static string Read(string saveKey, string defaultValue) {
+        string path = "user://" + saveKey + ".txt";
         if (!FileAccess.FileExists(path)) {
             using var file = FileAccess.Open(path, FileAccess.ModeFlags.Write);
             file.StoreString(defaultValue);
@@ -15,8 +15,8 @@ public partial class BazookaManager : Node {
         }
     }
 
-    public static void Write(int saveId, string value) {
-        string path = "user://" + saveIds[saveId] + ".txt";
+    public static void Write(string saveKey, string value) {
+        string path = "user://" + saveKey + ".txt";
         using var file = FileAccess.Open(path, FileAccess.ModeFlags.Write);
         file.StoreString(value);
         file.Flush();
