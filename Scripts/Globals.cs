@@ -6,6 +6,7 @@ public partial class Globals : Node {
     public static List<Camera3D> Cameras = [];
     public static bool MovableCamera = false;
     public static int Time = 0;
+    public static int Night = 1;
     public static int PreviousCam = 1;
 
     public static int FredrickAiLevel = 5;
