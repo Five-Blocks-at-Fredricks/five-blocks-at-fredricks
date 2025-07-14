@@ -131,9 +131,4 @@ public partial class Bernie : Node3D {
 
         JumpScareTimer += delta;
     }
-
-    private void ResetScene() {
-        var currentScene = GetTree().CurrentScene.SceneFilePath;
-        GetTree().ChangeSceneToFile(currentScene);
-    }
 }
