@@ -37,6 +37,10 @@ public partial class HallwayFlash : OmniLight3D {
                     cam += 1;
                 }
             }
+
+            AudioStreamPlayer AudioPlayer = GetNode<AudioStreamPlayer>("AudioPlayer");
+
+            AudioPlayer.Play(1f);
         }
 
         WasFlashLightKeybindPressed = Input.IsKeyPressed(Key.Ctrl);
