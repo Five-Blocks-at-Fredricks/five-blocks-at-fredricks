@@ -10,5 +10,9 @@ public partial class CameraToggle : Button {
             Globals.MovableCamera = true;
             Globals.ActiveCamera = 0;
         }
+
+        AudioStreamPlayer AudioPlayer = GetNode<AudioStreamPlayer>("AudioPlayer");
+
+        AudioPlayer.Play();
     }
 }

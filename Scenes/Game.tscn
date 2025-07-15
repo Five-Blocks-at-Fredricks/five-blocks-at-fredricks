@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=40 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://d0y87j81ygtye" path="res://Images/CameraMap.png" id="12_3cx6b"]
 [ext_resource type="Script" uid="uid://b1blf6rlmheot" path="res://Scripts/PowerTextUpdater.cs" id="18_x3xnh"]
 [ext_resource type="PackedScene" uid="uid://j1sr6mxyvv7x" path="res://Prefabs/dingus.tscn" id="20_tfod6"]
+[ext_resource type="AudioStream" uid="uid://cs6dl2idly5fo" path="res://Audio/CameraSwitch.wav" id="22_3jf1l"]
+[ext_resource type="AudioStream" uid="uid://dspokl0341q3w" path="res://Audio/CameraToggle.wav" id="23_i0vto"]
 [ext_resource type="PackedScene" uid="uid://dd506xrolggeu" path="res://Models/doggy.glb" id="23_lbihj"]
 [ext_resource type="Script" uid="uid://bpv6ibbtnqvs5" path="res://Scripts/DoggyNose.cs" id="24_raj38"]
 [ext_resource type="Script" uid="uid://cfa7dfyr0q0e" path="res://Scripts/TimeLabelUpdater.cs" id="25_8e0uq"]
@@ -1298,6 +1300,9 @@ label_settings = SubResource("LabelSettings_3cx6b")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="GUI/Cameras"]
+stream = ExtResource("22_3jf1l")
+
 [node name="CameraToggle" type="Button" parent="GUI"]
 anchors_preset = 7
 anchor_left = 0.5
@@ -1314,6 +1319,9 @@ theme_override_fonts/font = ExtResource("9_dahhg")
 theme_override_font_sizes/font_size = 81
 text = "Cameras"
 script = ExtResource("8_dahhg")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="GUI/CameraToggle"]
+stream = ExtResource("23_i0vto")
 
 [node name="PowerText" type="Control" parent="GUI"]
 layout_mode = 3
