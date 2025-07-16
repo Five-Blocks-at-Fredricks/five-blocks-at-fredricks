@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=43 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://o4a072yuuik2" path="res://Scripts/Animatronics/Dingus.cs" id="10_rajel"]
 [ext_resource type="Texture2D" uid="uid://d0y87j81ygtye" path="res://Images/CameraMap.png" id="12_3cx6b"]
 [ext_resource type="AudioStream" uid="uid://bogsbd1vloau5" path="res://Audio/OfficeLightHum.mp3" id="13_i4lct"]
+[ext_resource type="AudioStream" uid="uid://kiwv2ngwn2se" path="res://Audio/Door.mp3" id="13_iyesh"]
 [ext_resource type="AudioStream" uid="uid://ct5fno3beu4m8" path="res://Audio/LightFlash.wav" id="14_356ba"]
 [ext_resource type="Script" uid="uid://b1blf6rlmheot" path="res://Scripts/PowerTextUpdater.cs" id="18_x3xnh"]
 [ext_resource type="PackedScene" uid="uid://j1sr6mxyvv7x" path="res://Prefabs/dingus.tscn" id="20_tfod6"]
@@ -196,11 +197,20 @@ size = Vector3(0.243896, 3.46489, 1.83958)
 material = SubResource("StandardMaterial3D_dahhg")
 script = ExtResource("5_3so38")
 
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="Building/Office/LeftDoor"]
+stream = ExtResource("13_iyesh")
+volume_db = -5.0
+
 [node name="RightDoor" type="CSGBox3D" parent="Building/Office"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.57306, 3.79107, -1.66524)
 size = Vector3(0.243896, 3.13969, 1.83958)
 material = SubResource("StandardMaterial3D_dahhg")
 script = ExtResource("5_3so38")
+
+[node name="AudioPlayer" type="AudioStreamPlayer3D" parent="Building/Office/RightDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168982, 0.163, 0.125724)
+stream = ExtResource("13_iyesh")
+volume_db = -5.0
 
 [node name="LightBulb" type="OmniLight3D" parent="Building/Office"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.69188, -2.04621)

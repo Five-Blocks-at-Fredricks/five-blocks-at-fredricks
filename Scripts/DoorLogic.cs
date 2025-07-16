@@ -19,6 +19,10 @@ public partial class DoorLogic : CsgBox3D {
             } else {
                 IsClosed = true;
             }
+
+            AudioStreamPlayer3D AudioPlayer = GetNode<AudioStreamPlayer3D>("AudioPlayer");
+
+            AudioPlayer.Play();
         }
 
         Vector3 Pos = Position;
