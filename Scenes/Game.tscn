@@ -273,6 +273,7 @@ script = ExtResource("2_gl6un")
 
 [node name="AudioPlayer" type="AudioStreamPlayer" parent="Building/OfficeHallway/CenterHallway/Light"]
 stream = ExtResource("14_356ba")
+volume_db = -5.0
 
 [node name="FarWall" type="CSGBox3D" parent="Building/OfficeHallway/CenterHallway"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079628, 2.52992, -26.831)
