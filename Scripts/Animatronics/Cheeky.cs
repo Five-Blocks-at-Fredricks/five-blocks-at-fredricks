@@ -133,13 +133,8 @@ public partial class Cheeky : Node3D {
         } else if (PositionNumber == 7) {
             DoorLogic RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
             if (RightDoor.IsClosed) {
-                PositionNumber = 1;
-
-                Pos.X = -17.729f;
-                Pos.Y = 1.225f;
-                Pos.Z = -46.571f;
-
-                Rot.Y = 105f;
+                int LiterallyTheNumberZero = 0;
+                MoveCheeky(ref LiterallyTheNumberZero, ref Pos, ref Rot, ref HeadRotation);
             } else {
                 PositionNumber = 8;
             }
