@@ -33,68 +33,7 @@ public partial class Bernie : Node3D {
             // Y: 3.089
             // Z: -44.654
 
-            if (PositionNumber == 0) {
-                PositionNumber = 1;
-
-                Pos.X = -28.2f;
-                Pos.Y = 1.225f;
-                Pos.Z = -33.981f;
-
-                Rot.Y = 120f;
-            } else if (PositionNumber == 1) {
-                PositionNumber = 2;
-
-                Pos.X = -25.278f;
-                Pos.Y = 1.225f;
-                Pos.Z = -14.419f;
-
-                Rot.Y = -133.1f;
-
-                HeadRotation.Z = 13.3f;
-            } else if (PositionNumber == 2) {
-                PositionNumber = 3;
-
-                Pos.X = -2.607f;
-                Pos.Y = 1.225f;
-                Pos.Z = -23.264f;
-
-                Rot.Y = -90f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 3) {
-                PositionNumber = 4;
-
-                Pos.X = -7.166f;
-                Pos.Y = 1.225f;
-                Pos.Z = -18.184f;
-
-                Rot.Y = -90f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 4) {
-                PositionNumber = 5;
-
-                Pos.X = -7.166f;
-                Pos.Y = 1.225f;
-                Pos.Z = -4.684f;
-
-                Rot.Y = -90f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 5) {
-                DoorLogic LeftDoor = GetNode<DoorLogic>("/root/Game/Building/Office/LeftDoor");
-                if (LeftDoor.IsClosed) {
-                    PositionNumber = 1;
-
-                    Pos.X = -28.2f;
-                    Pos.Y = 1.225f;
-                    Pos.Z = -33.981f;
-
-                    Rot.Y = 120f;
-                } else {
-                    PositionNumber = 6;
-                }
-            }
+            MoveBernie(ref PositionNumber, ref Pos, ref Rot, ref HeadRotation);
         }
 
         if (PositionNumber == 6) {
@@ -111,6 +50,71 @@ public partial class Bernie : Node3D {
         RotationDegrees = Rot;
 
         Head.RotationDegrees = HeadRotation;
+    }
+
+    private void MoveBernie(ref int PositionNumber, ref Vector3 Pos, ref Vector3 Rot, ref Vector3 HeadRotation) {
+        if (PositionNumber == 0) {
+            PositionNumber = 1;
+
+            Pos.X = -28.2f;
+            Pos.Y = 1.225f;
+            Pos.Z = -33.981f;
+
+            Rot.Y = 120f;
+        } else if (PositionNumber == 1) {
+            PositionNumber = 2;
+
+            Pos.X = -25.278f;
+            Pos.Y = 1.225f;
+            Pos.Z = -14.419f;
+
+            Rot.Y = -133.1f;
+
+            HeadRotation.Z = 13.3f;
+        } else if (PositionNumber == 2) {
+            PositionNumber = 3;
+
+            Pos.X = -2.607f;
+            Pos.Y = 1.225f;
+            Pos.Z = -23.264f;
+
+            Rot.Y = -90f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 3) {
+            PositionNumber = 4;
+
+            Pos.X = -7.166f;
+            Pos.Y = 1.225f;
+            Pos.Z = -18.184f;
+
+            Rot.Y = -90f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 4) {
+            PositionNumber = 5;
+
+            Pos.X = -7.166f;
+            Pos.Y = 1.225f;
+            Pos.Z = -4.684f;
+
+            Rot.Y = -90f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 5) {
+            DoorLogic LeftDoor = GetNode<DoorLogic>("/root/Game/Building/Office/LeftDoor");
+            if (LeftDoor.IsClosed) {
+                PositionNumber = 1;
+
+                Pos.X = -28.2f;
+                Pos.Y = 1.225f;
+                Pos.Z = -33.981f;
+
+                Rot.Y = 120f;
+            } else {
+                PositionNumber = 6;
+            }
+        }
     }
 
     private void Jumpscare(float delta, ref Vector3 Pos) {

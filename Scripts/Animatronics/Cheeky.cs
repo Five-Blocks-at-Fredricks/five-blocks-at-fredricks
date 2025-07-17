@@ -33,97 +33,7 @@ public partial class Cheeky : Node3D {
             // Y: 3.147
             // Z: -38.513
 
-            if (PositionNumber == 0) {
-                PositionNumber = 1;
-
-                Pos.X = -17.729f;
-                Pos.Y = 1.225f;
-                Pos.Z = -46.571f;
-
-                Rot.Y = 105f;
-                Rot.Z = 0f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 1) {
-                PositionNumber = 2;
-
-                Pos.X = -21.625f;
-                Pos.Y = 1.225f;
-                Pos.Z = -60.796f;
-
-                Rot.Y = -180.0f;
-                Rot.Z = 0f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 2) {
-                PositionNumber = 3;
-
-                Pos.X = -25.606f;
-                Pos.Y = 1.225f;
-                Pos.Z = -36.705f;
-
-                Rot.Y = -180.0f;
-                Rot.Z = 0f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 3) {
-                PositionNumber = 4;
-
-                Pos.X = -17.851f;
-                Pos.Y = -0.358f;
-                Pos.Z = -23.35f;
-
-                Rot.Y = 0f;
-                Rot.Z = 82f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 4) {
-                PositionNumber = 5;
-
-                Pos.X = -0.531f;
-                Pos.Y = 1.225f;
-                Pos.Z = -24.273f;
-
-                Rot.Y = -90f;
-                Rot.Z = 0f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 5) {
-                PositionNumber = 6;
-
-                Pos.X = 7.135f;
-                Pos.Y = 1.225f;
-                Pos.Z = -17.673f;
-
-                Rot.Y = -90f;
-                Rot.Z = 0f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 6) {
-                PositionNumber = 7;
-
-                Pos.X = 7.135f;
-                Pos.Y = 1.225f;
-                Pos.Z = -4.123f;
-
-                Rot.Y = -90f;
-                Rot.Z = 0f;
-
-                HeadRotation.Z = 0f;
-            } else if (PositionNumber == 7) {
-                DoorLogic RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
-                if (RightDoor.IsClosed) {
-                    PositionNumber = 1;
-
-                    Pos.X = -17.729f;
-                    Pos.Y = 1.225f;
-                    Pos.Z = -46.571f;
-
-                    Rot.Y = 105f;
-                } else {
-                    PositionNumber = 8;
-                }
-            }
+            MoveCheeky(ref PositionNumber, ref Pos, ref Rot, ref HeadRotation);
         }
 
         if (PositionNumber == 8) {
@@ -140,6 +50,100 @@ public partial class Cheeky : Node3D {
         RotationDegrees = Rot;
 
         Head.RotationDegrees = HeadRotation;
+    }
+
+    private void MoveCheeky(ref int PositionNumber, ref Vector3 Pos, ref Vector3 Rot, ref Vector3 HeadRotation) {
+        if (PositionNumber == 0) {
+            PositionNumber = 1;
+
+            Pos.X = -17.729f;
+            Pos.Y = 1.225f;
+            Pos.Z = -46.571f;
+
+            Rot.Y = 105f;
+            Rot.Z = 0f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 1) {
+            PositionNumber = 2;
+
+            Pos.X = -21.625f;
+            Pos.Y = 1.225f;
+            Pos.Z = -60.796f;
+
+            Rot.Y = -180.0f;
+            Rot.Z = 0f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 2) {
+            PositionNumber = 3;
+
+            Pos.X = -25.606f;
+            Pos.Y = 1.225f;
+            Pos.Z = -36.705f;
+
+            Rot.Y = -180.0f;
+            Rot.Z = 0f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 3) {
+            PositionNumber = 4;
+
+            Pos.X = -17.851f;
+            Pos.Y = -0.358f;
+            Pos.Z = -23.35f;
+
+            Rot.Y = 0f;
+            Rot.Z = 82f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 4) {
+            PositionNumber = 5;
+
+            Pos.X = -0.531f;
+            Pos.Y = 1.225f;
+            Pos.Z = -24.273f;
+
+            Rot.Y = -90f;
+            Rot.Z = 0f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 5) {
+            PositionNumber = 6;
+
+            Pos.X = 7.135f;
+            Pos.Y = 1.225f;
+            Pos.Z = -17.673f;
+
+            Rot.Y = -90f;
+            Rot.Z = 0f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 6) {
+            PositionNumber = 7;
+
+            Pos.X = 7.135f;
+            Pos.Y = 1.225f;
+            Pos.Z = -4.123f;
+
+            Rot.Y = -90f;
+            Rot.Z = 0f;
+
+            HeadRotation.Z = 0f;
+        } else if (PositionNumber == 7) {
+            DoorLogic RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
+            if (RightDoor.IsClosed) {
+                PositionNumber = 1;
+
+                Pos.X = -17.729f;
+                Pos.Y = 1.225f;
+                Pos.Z = -46.571f;
+
+                Rot.Y = 105f;
+            } else {
+                PositionNumber = 8;
+            }
+        }
     }
 
     private void Jumpscare(float delta, ref Vector3 Pos) {
