@@ -21,10 +21,12 @@ public partial class HallwayFlash : OmniLight3D {
             WasFlashLightKeybindPressed = true;
             FlashLightTimer = 0;
 
+            // Code for flashing the hallway light
             if (Globals.ActiveCamera == 0) {
                 LightEnergy = 5f;
             }
 
+            // Code for flashing the camera light
             int cam = 0;
             if (Globals.ActiveCamera != 0) {
                 foreach (Camera3D Camera in Globals.Cameras) {
