@@ -33,7 +33,7 @@ public partial class Cheeky : Node3D {
             // Y: 3.147
             // Z: -38.513
 
-            MoveCheeky(ref PositionNumber, ref Pos, ref Rot, ref HeadRotation);
+            MoveCheeky(ref PositionNumber, ref Pos, ref Rot, ref HeadRotation, true);
         }
 
         if (PositionNumber == 8) {
@@ -52,7 +52,11 @@ public partial class Cheeky : Node3D {
         Head.RotationDegrees = HeadRotation;
     }
 
-    private void MoveCheeky(ref int PositionNumber, ref Vector3 Pos, ref Vector3 Rot, ref Vector3 HeadRotation) {
+    private void MoveCheeky(ref int PositionNumber, ref Vector3 Pos, ref Vector3 Rot, ref Vector3 HeadRotation, bool MoveBackwardsChance) {
+        if (MoveBackwardsChance && Random.Shared.NextDouble() < 0.3 && PositionNumber > 1) {
+            PositionNumber -= 2;
+        }
+
         if (PositionNumber == 0) {
             PositionNumber = 1;
 
@@ -133,8 +137,8 @@ public partial class Cheeky : Node3D {
         } else if (PositionNumber == 7) {
             DoorLogic RightDoor = GetNode<DoorLogic>("/root/Game/Building/Office/RightDoor");
             if (RightDoor.IsClosed) {
-                int LiterallyTheNumberZero = 0;
-                MoveCheeky(ref LiterallyTheNumberZero, ref Pos, ref Rot, ref HeadRotation);
+                PositionNumber = 0;
+                MoveCheeky(ref PositionNumber, ref Pos, ref Rot, ref HeadRotation, false);
             } else {
                 PositionNumber = 8;
             }
