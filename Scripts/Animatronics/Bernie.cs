@@ -33,7 +33,7 @@ public partial class Bernie : Node3D {
             // Y: 3.089
             // Z: -44.654
 
-            MoveBernie(ref PositionNumber, ref Pos, ref Rot, ref HeadRotation);
+            MoveBernie(ref PositionNumber, ref Pos, ref Rot, ref HeadRotation, true);
         }
 
         if (PositionNumber == 6) {
@@ -52,7 +52,11 @@ public partial class Bernie : Node3D {
         Head.RotationDegrees = HeadRotation;
     }
 
-    private void MoveBernie(ref int PositionNumber, ref Vector3 Pos, ref Vector3 Rot, ref Vector3 HeadRotation) {
+    private void MoveBernie(ref int PositionNumber, ref Vector3 Pos, ref Vector3 Rot, ref Vector3 HeadRotation, bool MoveBackwardsChance) {
+        if (MoveBackwardsChance && Random.Shared.NextDouble() < 0.5 && PositionNumber > 1) {
+            PositionNumber -= 2;
+        }
+
         if (PositionNumber == 0) {
             PositionNumber = 1;
 
@@ -105,7 +109,7 @@ public partial class Bernie : Node3D {
             DoorLogic LeftDoor = GetNode<DoorLogic>("/root/Game/Building/Office/LeftDoor");
             if (LeftDoor.IsClosed) {
                 int LiterallyTheNumberZero = 0;
-                MoveBernie(ref LiterallyTheNumberZero, ref Pos, ref Rot, ref HeadRotation);
+                MoveBernie(ref LiterallyTheNumberZero, ref Pos, ref Rot, ref HeadRotation, false);
             } else {
                 PositionNumber = 6;
             }
