@@ -53,7 +53,7 @@ public partial class Cheeky : Node3D {
     }
 
     private void MoveCheeky(ref int PositionNumber, ref Vector3 Pos, ref Vector3 Rot, ref Vector3 HeadRotation, bool MoveBackwardsChance) {
-        if (MoveBackwardsChance && Random.Shared.NextDouble() < 0.3 && PositionNumber > 1) {
+        if (MoveBackwardsChance && Random.Shared.NextDouble() < 0.3 && PositionNumber > 1 && PositionNumber != 7) {
             PositionNumber -= 2;
         }
 
