@@ -1377,9 +1377,13 @@ vertical_alignment = 1
 
 [node name="Debug" type="Control" parent="GUI"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_right = 6.0
 offset_bottom = 40.0
+grow_horizontal = 2
 scale = Vector2(0.52, 0.522359)
 
 [node name="Bernie" type="Control" parent="GUI/Debug"]
@@ -1387,17 +1391,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1426.15
-offset_right = 1466.15
+offset_left = -343.083
+offset_right = -303.083
 offset_bottom = 40.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="GUI/Debug/Bernie"]
 layout_mode = 0
-offset_left = 28.923
-offset_top = 32.5447
-offset_right = 698.923
-offset_bottom = 116.545
+offset_left = 10.0
+offset_top = 33.0
+offset_right = 702.0
+offset_bottom = 117.0
 theme_override_colors/font_color = Color(0, 0.333333, 1, 1)
 theme_override_font_sizes/font_size = 61
 text = "Ai: {AiLevel}"
@@ -1421,9 +1425,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1422.31
+offset_left = -346.923
 offset_top = 189.525
-offset_right = 1462.31
+offset_right = -306.923
 offset_bottom = 229.525
 grow_horizontal = 2
 
@@ -1456,9 +1460,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1422.31
+offset_left = -346.923
 offset_top = 386.707
-offset_right = 1462.31
+offset_right = -306.923
 offset_bottom = 426.707
 grow_horizontal = 2
 
@@ -1491,9 +1495,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 1422.31
+offset_left = -346.923
 offset_top = 583.89
-offset_right = 1462.31
+offset_right = -306.923
 offset_bottom = 623.89
 grow_horizontal = 2
 
