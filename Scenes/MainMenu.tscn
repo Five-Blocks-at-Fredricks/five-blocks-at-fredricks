@@ -117,5 +117,24 @@ position = Vector2(1411, 596)
 scale = Vector2(1.84, 1.84)
 texture = ExtResource("4_ghw46")
 
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -535.0
+offset_top = -115.0
+offset_right = -15.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 76
+text = "Version: BETA"
+horizontal_alignment = 2
+vertical_alignment = 2
+
 [connection signal="button_up" from="UiContainer/NewGameButton" to="UiContainer/NewGameButton/NewGameLogic" method="_on_new_game_button_button_up"]
 [connection signal="button_up" from="UiContainer/ContinueButton" to="UiContainer/ContinueButton/ContinueLogic" method="_on_continue_button_button_up"]
