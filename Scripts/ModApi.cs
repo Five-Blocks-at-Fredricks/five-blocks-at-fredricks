@@ -32,6 +32,7 @@ public partial class ModApi : Control {
             var ModJson = JsonConvert.DeserializeObject<Dictionary<string, object>>(ModJsonContent);
 
             bool Enabled = (bool)ModJson["enabled"];
+            string ModName = (string)ModJson["name"];
 
             if (Enabled) {
                 if (!FileAccess.FileExists(baseScenePath)) {
@@ -60,7 +61,7 @@ public partial class ModApi : Control {
                 }
 
                 AddChild(modRoot);
-                GetNode<Node3D>("Base").Name = $"Mod_{folder}";
+                GetNode<Node3D>("Base").Name = $"Mod_{ModName}";
                 GD.Print($"Loaded mod: {folder}");
             } else {
                 GD.Print($"Skipped mod: {folder} because it is disabled");
