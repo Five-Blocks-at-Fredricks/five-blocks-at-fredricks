@@ -19,7 +19,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xim88")
 
 [node name="UiContainer" type="Control" parent="."]
 anchors_preset = 0
@@ -137,6 +136,12 @@ theme_override_font_sizes/font_size = 56
 text = "Version: BETA"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="Mods" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_xim88")
 
 [connection signal="button_up" from="UiContainer/NewGameButton" to="UiContainer/NewGameButton/NewGameLogic" method="_on_new_game_button_button_up"]
 [connection signal="button_up" from="UiContainer/ContinueButton" to="UiContainer/ContinueButton/ContinueLogic" method="_on_continue_button_button_up"]

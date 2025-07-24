@@ -60,6 +60,7 @@ public partial class ModApi : Control {
                 }
 
                 AddChild(modRoot);
+                GetNode<Node3D>("Base").Name = $"Mod_{folder}";
                 GD.Print($"Loaded mod: {folder}");
             } else {
                 GD.Print($"Skipped mod: {folder} because it is disabled");
