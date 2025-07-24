@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs7u2sn1giu57"]
+[gd_scene load_steps=9 format=3 uid="uid://cs7u2sn1giu57"]
 
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_tt5f1"]
+[ext_resource type="Script" uid="uid://b5vmueir3e4ee" path="res://Scripts/ModApi.cs" id="1_xim88"]
 [ext_resource type="Script" uid="uid://c4l00u6yvko1v" path="res://Scripts/SceneSwitcher.cs" id="2_853f1"]
 [ext_resource type="AudioStream" uid="uid://gm8ulvgmouba" path="res://Audio/MenuMusic.mp3" id="3_8saeu"]
 [ext_resource type="Script" uid="uid://d4d03wteb6vnu" path="res://Scripts/NewGameLogic.cs" id="3_df05h"]
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xim88")
 
 [node name="UiContainer" type="Control" parent="."]
 anchors_preset = 0
