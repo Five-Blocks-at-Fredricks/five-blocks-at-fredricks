@@ -1,4 +1,6 @@
 using Godot;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 public partial class ModApi : Control {
     public override void _Ready() {
@@ -18,34 +20,50 @@ public partial class ModApi : Control {
             string modPath = $"{modsPath}/{folder}";
             string baseScenePath = $"{modPath}/Base.tscn";
             string baseScriptPath = $"{modPath}/Base.gd";
+            string modJsonPath = $"{modPath}/mod.json";
 
-            if (!FileAccess.FileExists(baseScenePath)) {
-                GD.Print($"Skipping {folder}: No Base.tscn");
-                continue;
+            string ModJsonContent = "";
+
+            if (FileAccess.FileExists(modJsonPath)) {
+                using var file = FileAccess.Open(modJsonPath, FileAccess.ModeFlags.Read);
+                ModJsonContent = file.GetAsText();
             }
 
-            PackedScene modScene = GD.Load<PackedScene>(baseScenePath);
-            if (modScene == null) {
-                GD.PrintErr($"Failed to load scene: {baseScenePath}");
-                continue;
-            }
+            var ModJson = JsonConvert.DeserializeObject<Dictionary<string, object>>(ModJsonContent);
 
-            Node modRoot = modScene.Instantiate();
+            bool Enabled = (bool)ModJson["enabled"];
 
-            // Load the Base.gd script if it exists
-            if (FileAccess.FileExists(baseScriptPath)) {
-                var modScript = GD.Load<Script>(baseScriptPath);
-                if (modScript != null) {
-                    modRoot.SetScript(modScript);
-                } else {
-                    GD.PrintErr($"Failed to load script: {baseScriptPath}");
+            if (Enabled) {
+                if (!FileAccess.FileExists(baseScenePath)) {
+                    GD.Print($"Skipping {folder}: No Base.tscn");
+                    continue;
                 }
-            } else {
-                GD.Print($"No Base.gd script found for mod {folder}");
-            }
 
-            AddChild(modRoot);
-            GD.Print($"Loaded mod: {folder}");
+                PackedScene modScene = GD.Load<PackedScene>(baseScenePath);
+                if (modScene == null) {
+                    GD.PrintErr($"Failed to load scene: {baseScenePath}");
+                    continue;
+                }
+
+                Node modRoot = modScene.Instantiate();
+
+                // Load the Base.gd script if it exists
+                if (FileAccess.FileExists(baseScriptPath)) {
+                    var modScript = GD.Load<Script>(baseScriptPath);
+                    if (modScript != null) {
+                        modRoot.SetScript(modScript);
+                    } else {
+                        GD.PrintErr($"Failed to load script: {baseScriptPath}");
+                    }
+                } else {
+                    GD.Print($"No Base.gd script found for mod {folder}");
+                }
+
+                AddChild(modRoot);
+                GD.Print($"Loaded mod: {folder}");
+            } else {
+                GD.Print($"Skipped mod: {folder} because it is disabled");
+            }
         }
     }
 }
