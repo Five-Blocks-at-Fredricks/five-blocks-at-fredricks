@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=44 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://bogsbd1vloau5" path="res://Audio/OfficeLightHum.mp3" id="13_i4lct"]
 [ext_resource type="AudioStream" uid="uid://kiwv2ngwn2se" path="res://Audio/Door.mp3" id="13_iyesh"]
 [ext_resource type="AudioStream" uid="uid://ct5fno3beu4m8" path="res://Audio/LightFlash.wav" id="14_356ba"]
+[ext_resource type="Script" uid="uid://b50swl207wrj" path="res://Scripts/DialogPlayer.cs" id="15_i1pr2"]
 [ext_resource type="Script" uid="uid://b1blf6rlmheot" path="res://Scripts/PowerTextUpdater.cs" id="18_x3xnh"]
 [ext_resource type="PackedScene" uid="uid://j1sr6mxyvv7x" path="res://Prefabs/dingus.tscn" id="20_tfod6"]
 [ext_resource type="AudioStream" uid="uid://cs6dl2idly5fo" path="res://Audio/CameraSwitch.wav" id="22_3jf1l"]
@@ -221,6 +222,11 @@ omni_range = 14.003
 stream = ExtResource("13_i4lct")
 autoplay = true
 parameters/looping = true
+
+[node name="DialogPlayer" type="AudioStreamPlayer3D" parent="Building/Office"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10275, 0.863241)
+panning_strength = 0.1
+script = ExtResource("15_i1pr2")
 
 [node name="OfficeHallway" type="Node3D" parent="Building"]
 
