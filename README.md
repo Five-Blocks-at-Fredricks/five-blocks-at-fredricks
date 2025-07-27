@@ -5,4 +5,4 @@
 
  It totally isn't in a blocky art style because I've literally never made a 3d model before.
 
- This game is in VERY early development.
+ This game is somewhat close to releaset.
