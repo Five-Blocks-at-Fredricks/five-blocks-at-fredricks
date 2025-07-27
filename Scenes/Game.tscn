@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bglrjklbjl6ge"]
+[gd_scene load_steps=47 format=3 uid="uid://bglrjklbjl6ge"]
 
 [ext_resource type="Script" uid="uid://bmndjr6nhl02p" path="res://Scripts/CameraSystem/ActiveCameraUpdater.cs" id="1_2irst"]
 [ext_resource type="Script" uid="uid://bi8nvmuuqtnpv" path="res://Scripts/CameraRotate.cs" id="1_iukft"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cfuhxa0ms8sco" path="res://Models/arcade-machine2.glb" id="10_acvyw"]
 [ext_resource type="Script" uid="uid://o4a072yuuik2" path="res://Scripts/Animatronics/Dingus.cs" id="10_rajel"]
 [ext_resource type="Texture2D" uid="uid://d0y87j81ygtye" path="res://Images/CameraMap.png" id="12_3cx6b"]
+[ext_resource type="Texture2D" uid="uid://ey5bcqjyfwg1" path="res://Images/FreakyFredrick.png" id="12_4f4ik"]
 [ext_resource type="AudioStream" uid="uid://bogsbd1vloau5" path="res://Audio/OfficeLightHum.mp3" id="13_i4lct"]
 [ext_resource type="AudioStream" uid="uid://kiwv2ngwn2se" path="res://Audio/Door.mp3" id="13_iyesh"]
 [ext_resource type="AudioStream" uid="uid://ct5fno3beu4m8" path="res://Audio/LightFlash.wav" id="14_356ba"]
@@ -44,6 +45,11 @@ albedo_color = Color(0.44, 0.44, 0.44, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iukft"]
 albedo_color = Color(0.2457, 0.2457, 0.39, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khs3t"]
+albedo_texture = ExtResource("12_4f4ik")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0iyqm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dahhg"]
 albedo_color = Color(0.306923, 0.306923, 0.306923, 1)
@@ -164,6 +170,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0686646, -1.97035, 0.061955
 operation = 2
 size = Vector3(4.77698, 3.01477, 1.31738)
 material = SubResource("StandardMaterial3D_iukft")
+
+[node name="FreakyPoster" type="MeshInstance3D" parent="Building/Office/OfficeFrontWall"]
+transform = Transform3D(1.01634, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, -3.55955, -1.09975, 0.514396)
+material_override = SubResource("StandardMaterial3D_khs3t")
+mesh = SubResource("PlaneMesh_0iyqm")
 
 [node name="OfficeBackWall" type="CSGBox3D" parent="Building/Office"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079628, 1.35442, 1.54452)
