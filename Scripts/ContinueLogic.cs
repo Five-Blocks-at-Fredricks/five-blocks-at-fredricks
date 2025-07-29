@@ -7,7 +7,12 @@ public partial class ContinueLogic : Control {
     }
 
     private void _on_continue_button_button_up() {
-        Globals.Night = Globals.LastCompletedNight + 1;
+        if (Globals.LastCompletedNight == 5) {
+            Globals.Night = 5;
+            Globals.LastCompletedNight = 4;
+        } else {
+            Globals.Night = Globals.LastCompletedNight + 1;
+        }
 
         // Ai levels for the animatronics
         if (Globals.LastCompletedNight == 0) {

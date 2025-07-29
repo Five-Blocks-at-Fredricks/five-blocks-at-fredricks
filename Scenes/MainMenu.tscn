@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cs7u2sn1giu57"]
+[gd_scene load_steps=10 format=3 uid="uid://cs7u2sn1giu57"]
 
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://b5vmueir3e4ee" path="res://Scripts/ModApi.cs" id="1_xim88"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://d4d03wteb6vnu" path="res://Scripts/NewGameLogic.cs" id="3_df05h"]
 [ext_resource type="Script" uid="uid://cs75mm1t6khdg" path="res://Scripts/ContinueLogic.cs" id="4_8um5k"]
 [ext_resource type="Texture2D" uid="uid://brrdv5uye6stb" path="res://Images/MainMenuFredrick.png" id="4_ghw46"]
+[ext_resource type="Script" uid="uid://d2jyihem8ca07" path="res://Scripts/CustomNightLogic.cs" id="6_koqhg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_853f1"]
 font = ExtResource("1_tt5f1")
@@ -19,6 +20,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MainMenuFredrick" type="Sprite2D" parent="."]
+position = Vector2(1411, 596)
+scale = Vector2(1.84, 1.84)
+texture = ExtResource("4_ghw46")
 
 [node name="UiContainer" type="Control" parent="."]
 anchors_preset = 0
@@ -109,14 +115,27 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("4_8um5k")
 
+[node name="Custom Night" type="Button" parent="UiContainer"]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 422.0
+offset_right = 497.0
+offset_bottom = 600.0
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 21
+text = "Custom Night"
+script = ExtResource("2_853f1")
+ScenePath = "res://Scenes/CustomNight.tscn"
+
+[node name="CustomNightLogic" type="Control" parent="UiContainer/Custom Night"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_koqhg")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8saeu")
 autoplay = true
-
-[node name="MainMenuFredrick" type="Sprite2D" parent="."]
-position = Vector2(1411, 596)
-scale = Vector2(1.84, 1.84)
-texture = ExtResource("4_ghw46")
 
 [node name="VersionLabel" type="Label" parent="."]
 layout_mode = 1
