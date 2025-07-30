@@ -1,6 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://3um8kj2afp2y"]
+[gd_scene load_steps=11 format=3 uid="uid://3um8kj2afp2y"]
 
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_adacj"]
+[ext_resource type="Texture2D" uid="uid://c5cu2lx8tnqbs" path="res://Images/Fredrick.png" id="2_v7el4"]
+[ext_resource type="Script" uid="uid://dw5tv47py5ei7" path="res://Scripts/AiCustomizers.cs" id="3_4ypm7"]
+[ext_resource type="Texture2D" uid="uid://d34q8jbn5tiv7" path="res://Images/Bernie.png" id="3_puf1k"]
+[ext_resource type="Texture2D" uid="uid://jw4x77svpxa0" path="res://Images/Cheeky.png" id="4_4ypm7"]
+[ext_resource type="Texture2D" uid="uid://dm3cmavxqnaji" path="res://Images/Dingus.png" id="5_o8odn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7el4"]
+font = ExtResource("1_adacj")
+font_size = 396
+
+[sub_resource type="LabelSettings" id="LabelSettings_puf1k"]
+font = ExtResource("1_adacj")
+font_size = 251
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ypm7"]
+font = ExtResource("1_adacj")
+font_size = 365
+
+[sub_resource type="LabelSettings" id="LabelSettings_o8odn"]
+font = ExtResource("1_adacj")
+font_size = 250
 
 [node name="CustomNight" type="Control"]
 layout_mode = 3
@@ -23,3 +44,316 @@ theme_override_fonts/font = ExtResource("1_adacj")
 theme_override_font_sizes/font_size = 150
 text = "Custom Night"
 horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -244.0
+offset_top = -359.0
+offset_right = 244.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_adacj")
+theme_override_font_sizes/font_size = 101
+text = "Play"
+
+[node name="Animatronics" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fredrick" type="Sprite2D" parent="Animatronics"]
+position = Vector2(-544, -23)
+texture = ExtResource("2_v7el4")
+
+[node name="Level" type="Label" parent="Animatronics/Fredrick"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -222.0
+offset_right = 1065.0
+offset_bottom = 453.0
+grow_vertical = 0
+scale = Vector2(0.12, 0.12)
+text = "5"
+label_settings = SubResource("LabelSettings_v7el4")
+vertical_alignment = 2
+
+[node name="Arrows" type="Control" parent="Animatronics/Fredrick"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -205.0
+offset_top = -181.0
+offset_right = -165.0
+offset_bottom = -141.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Up" type="Button" parent="Animatronics/Fredrick/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -62.0
+offset_right = 18.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = "<"
+script = ExtResource("3_4ypm7")
+Animatronic = "fredrick"
+
+[node name="Down" type="Button" parent="Animatronics/Fredrick/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -31.0
+offset_right = 18.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = ">"
+script = ExtResource("3_4ypm7")
+UporDown = 2
+Animatronic = "fredrick"
+
+[node name="Bernie" type="Sprite2D" parent="Animatronics"]
+position = Vector2(-172, -23)
+scale = Vector2(1.66667, 1.70909)
+texture = ExtResource("3_puf1k")
+
+[node name="Level" type="Label" parent="Animatronics/Bernie"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -125.798
+offset_right = 713.0
+offset_bottom = 260.202
+grow_vertical = 0
+scale = Vector2(0.112, 0.112)
+text = "5"
+label_settings = SubResource("LabelSettings_puf1k")
+vertical_alignment = 2
+
+[node name="Arrows" type="Control" parent="Animatronics/Bernie"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -103.564
+offset_right = -80.0002
+offset_bottom = -63.5638
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.532157, 0.532157)
+
+[node name="Up" type="Button" parent="Animatronics/Bernie/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -62.0
+offset_right = 18.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = "<"
+script = ExtResource("3_4ypm7")
+Animatronic = "bernie"
+
+[node name="Down" type="Button" parent="Animatronics/Bernie/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.30293
+offset_top = -32.3035
+offset_right = 17.6971
+offset_bottom = 22.6965
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = ">"
+script = ExtResource("3_4ypm7")
+UporDown = 2
+Animatronic = "bernie"
+
+[node name="Cheeky" type="Sprite2D" parent="Animatronics"]
+position = Vector2(197, -23)
+scale = Vector2(2, 2.22047)
+texture = ExtResource("4_4ypm7")
+
+[node name="Level" type="Label" parent="Animatronics/Cheeky"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -79.0
+offset_top = -104.032
+offset_right = 1171.0
+offset_bottom = 481.968
+grow_vertical = 0
+scale = Vector2(0.07, 0.068)
+text = "5"
+label_settings = SubResource("LabelSettings_4ypm7")
+vertical_alignment = 2
+
+[node name="Arrows" type="Control" parent="Animatronics/Cheeky"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -101.5
+offset_top = -81.5141
+offset_right = -61.5
+offset_bottom = -41.5141
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.454313, 0.454313)
+
+[node name="Up" type="Button" parent="Animatronics/Cheeky/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -62.0
+offset_right = 18.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = "<"
+script = ExtResource("3_4ypm7")
+Animatronic = "cheeky"
+
+[node name="Down" type="Button" parent="Animatronics/Cheeky/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -31.0
+offset_right = 18.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = ">"
+script = ExtResource("3_4ypm7")
+UporDown = 2
+Animatronic = "cheeky"
+
+[node name="Dingus" type="Sprite2D" parent="Animatronics"]
+position = Vector2(565.75, -23)
+scale = Vector2(1.66901, 1.94483)
+texture = ExtResource("5_o8odn")
+
+[node name="Level" type="Label" parent="Animatronics/Dingus"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -103.504
+offset_top = -113.121
+offset_right = 723.496
+offset_bottom = 267.879
+grow_vertical = 0
+scale = Vector2(0.117385, 0.106714)
+text = "5"
+label_settings = SubResource("LabelSettings_o8odn")
+vertical_alignment = 2
+
+[node name="Arrows" type="Control" parent="Animatronics/Dingus"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.77
+offset_top = -93.5816
+offset_right = -87.7698
+offset_bottom = -53.5816
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.52572, 0.52572)
+
+[node name="Up" type="Button" parent="Animatronics/Dingus/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -62.0
+offset_right = 18.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = "<"
+script = ExtResource("3_4ypm7")
+Animatronic = "dingus"
+
+[node name="Down" type="Button" parent="Animatronics/Dingus/Arrows"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -31.0
+offset_right = 18.0
+offset_bottom = 24.0
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.57079
+text = ">"
+script = ExtResource("3_4ypm7")
+UporDown = 2
+Animatronic = "dingus"
