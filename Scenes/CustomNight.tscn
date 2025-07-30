@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://3um8kj2afp2y"]
+[gd_scene load_steps=13 format=3 uid="uid://3um8kj2afp2y"]
 
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_adacj"]
+[ext_resource type="Script" uid="uid://c4l00u6yvko1v" path="res://Scripts/SceneSwitcher.cs" id="2_4ypm7"]
 [ext_resource type="Texture2D" uid="uid://c5cu2lx8tnqbs" path="res://Images/Fredrick.png" id="2_v7el4"]
 [ext_resource type="Script" uid="uid://dw5tv47py5ei7" path="res://Scripts/AiCustomizers.cs" id="3_4ypm7"]
+[ext_resource type="Script" uid="uid://u5nv5mexapwm" path="res://Scripts/CustomNightPlayLogic.cs" id="3_o8odn"]
 [ext_resource type="Texture2D" uid="uid://d34q8jbn5tiv7" path="res://Images/Bernie.png" id="3_puf1k"]
 [ext_resource type="Texture2D" uid="uid://jw4x77svpxa0" path="res://Images/Cheeky.png" id="4_4ypm7"]
 [ext_resource type="Texture2D" uid="uid://dm3cmavxqnaji" path="res://Images/Dingus.png" id="5_o8odn"]
@@ -61,6 +63,14 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_adacj")
 theme_override_font_sizes/font_size = 101
 text = "Play"
+script = ExtResource("2_4ypm7")
+ScenePath = "res://Scenes/Game.tscn"
+
+[node name="CustomNightPlayLogic" type="Control" parent="PlayButton"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_o8odn")
 
 [node name="Animatronics" type="Control" parent="."]
 layout_mode = 1
@@ -357,3 +367,5 @@ text = ">"
 script = ExtResource("3_4ypm7")
 UporDown = 2
 Animatronic = "dingus"
+
+[connection signal="button_up" from="PlayButton" to="PlayButton/CustomNightPlayLogic" method="_on_play_button_button_up"]

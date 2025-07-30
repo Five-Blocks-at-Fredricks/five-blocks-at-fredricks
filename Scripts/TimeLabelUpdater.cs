@@ -26,8 +26,10 @@ public partial class TimeLabelUpdater : Label {
         } else if (Globals.Time == 300) {
             DisplayedTime = "5 AM";
         } else if (Globals.Time == 360) {
-            Globals.LastCompletedNight += 1;
-            BazookaManager.Write(BazookaManager.LastBeatenNight, Globals.LastCompletedNight.ToString());
+            if (Globals.Night != 6) {
+                Globals.LastCompletedNight += 1;
+                BazookaManager.Write(BazookaManager.LastBeatenNight, Globals.LastCompletedNight.ToString());
+            }
 
             Globals.ResetGlobals();
             GetTree().ChangeSceneToFile("res://Scenes/6AMScreen.tscn");
