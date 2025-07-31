@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcpvxfftav6p2"]
+
+[ext_resource type="PackedScene" uid="uid://duaojlwp6woba" path="res://Models/dream-file.glb" id="1_ryy2d"]
+[ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="2_q7qcb"]
+[ext_resource type="Script" uid="uid://dfei8rei5cip" path="res://Scripts/DreamFileDialog.cs" id="3_aoq7e"]
+
+[node name="DreamFileDialog" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="3DIlluminator" type="SpotLight3D" parent="Camera3D"]
+light_energy = 0.1
+shadow_enabled = true
+spot_range = 6.997
+
+[node name="DreamFile" parent="." instance=ExtResource("1_ryy2d")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0814964, -1.97755, -5.40504)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -945.0
+offset_top = -238.0
+offset_right = 22693.0
+offset_bottom = 1186.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.0799983, 0.0799983)
+theme_override_colors/font_color = Color(0.958212, 0.54205, 1, 1)
+theme_override_fonts/font = ExtResource("2_q7qcb")
+theme_override_font_sizes/font_size = 611
+text = "{dialog}"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_aoq7e")

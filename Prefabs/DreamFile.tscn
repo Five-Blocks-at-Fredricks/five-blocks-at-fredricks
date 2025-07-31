@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmu4bbahsuu45"]
+
+[ext_resource type="PackedScene" uid="uid://duaojlwp6woba" path="res://Models/dream-file.glb" id="1_djs7r"]
+
+[node name="dream-file" instance=ExtResource("1_djs7r")]
