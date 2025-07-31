@@ -87,6 +87,7 @@ public partial class DreamFileDialog : Label {
 
             if (!AudioPlayer.Playing) {
                 AudioPlayer.Play();
+                GetNode<AudioStreamPlayer>("../../WindPlayer").Stop();
             }
         } else if (DialogTime == 60) {
             Globals.Night = 7;

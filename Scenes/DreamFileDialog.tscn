@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcpvxfftav6p2"]
+[gd_scene load_steps=6 format=3 uid="uid://dcpvxfftav6p2"]
 
 [ext_resource type="PackedScene" uid="uid://duaojlwp6woba" path="res://Models/dream-file.glb" id="1_ryy2d"]
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="2_q7qcb"]
 [ext_resource type="Script" uid="uid://dfei8rei5cip" path="res://Scripts/DreamFileDialog.cs" id="3_aoq7e"]
 [ext_resource type="AudioStream" uid="uid://c86002405tibc" path="res://Audio/DialogSwitch.mp3" id="4_2js5x"]
+[ext_resource type="AudioStream" uid="uid://bx851yrjl31wb" path="res://Audio/Wind.mp3" id="5_dv1ms"]
 
 [node name="DreamFileDialog" type="Node3D"]
 
@@ -42,4 +43,10 @@ script = ExtResource("3_aoq7e")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_2js5x")
+volume_db = 0.1
+
+[node name="WindPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_dv1ms")
 volume_db = 1.0
+autoplay = true
+parameters/looping = true
