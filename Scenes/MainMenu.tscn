@@ -162,5 +162,21 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_xim88")
 
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -451.0
+offset_top = 35.0
+offset_right = -33.0
+offset_bottom = 191.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_tt5f1")
+theme_override_font_sizes/font_size = 76
+text = "Settings"
+script = ExtResource("2_853f1")
+ScenePath = "res://Scenes/Settings.tscn"
+
 [connection signal="button_up" from="UiContainer/NewGameButton" to="UiContainer/NewGameButton/NewGameLogic" method="_on_new_game_button_button_up"]
 [connection signal="button_up" from="UiContainer/ContinueButton" to="UiContainer/ContinueButton/ContinueLogic" method="_on_continue_button_button_up"]
