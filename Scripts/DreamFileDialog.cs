@@ -90,7 +90,7 @@ public partial class DreamFileDialog : Label {
                 GetNode<AudioStreamPlayer>("../../WindPlayer").Stop();
             }
         } else if (DialogTime == 60) {
-            Globals.Night = 7;
+            Globals.Night = 6;
             Globals.MovableCamera = true;
             GetTree().ChangeSceneToFile("res://Scenes/Game.tscn");
         }
