@@ -10,6 +10,8 @@ public partial class Globals : Node {
     public static int LastCompletedNight = 0;
     public static int PreviousCam = 1;
 
+    public static bool MuteFlashSound = false;
+
     public static int FredrickAiLevel = 5;
     public static int BernieAiLevel = 5;
     public static int CheekyAiLevel = 5;
