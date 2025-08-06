@@ -40,9 +40,11 @@ public partial class HallwayFlash : OmniLight3D {
                 }
             }
 
-            AudioStreamPlayer AudioPlayer = GetNode<AudioStreamPlayer>("AudioPlayer");
+            if (!Globals.MuteFlashSound) {
+                AudioStreamPlayer AudioPlayer = GetNode<AudioStreamPlayer>("AudioPlayer");
 
-            AudioPlayer.Play(1f);
+                AudioPlayer.Play(1f);
+            }
         }
 
         WasFlashLightKeybindPressed = Input.IsKeyPressed(Key.Ctrl);
