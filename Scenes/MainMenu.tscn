@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cs7u2sn1giu57"]
+[gd_scene load_steps=11 format=3 uid="uid://cs7u2sn1giu57"]
 
 [ext_resource type="FontFile" uid="uid://c2ogfes6bjf06" path="res://Fonts/COMIC.TTF" id="1_tt5f1"]
 [ext_resource type="Script" uid="uid://b5vmueir3e4ee" path="res://Scripts/ModApi.cs" id="1_xim88"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cs75mm1t6khdg" path="res://Scripts/ContinueLogic.cs" id="4_8um5k"]
 [ext_resource type="Texture2D" uid="uid://brrdv5uye6stb" path="res://Images/MainMenuFredrick.png" id="4_ghw46"]
 [ext_resource type="Script" uid="uid://d2jyihem8ca07" path="res://Scripts/CustomNightLogic.cs" id="6_koqhg"]
+[ext_resource type="Script" uid="uid://d1mjtyfah4itk" path="res://Scripts/LoadSettings.cs" id="9_cmrfp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_853f1"]
 font = ExtResource("1_tt5f1")
@@ -177,6 +178,12 @@ theme_override_font_sizes/font_size = 76
 text = "Settings"
 script = ExtResource("2_853f1")
 ScenePath = "res://Scenes/Settings.tscn"
+
+[node name="LoadSettings" type="Control" parent="SettingsButton"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_cmrfp")
 
 [connection signal="button_up" from="UiContainer/NewGameButton" to="UiContainer/NewGameButton/NewGameLogic" method="_on_new_game_button_button_up"]
 [connection signal="button_up" from="UiContainer/ContinueButton" to="UiContainer/ContinueButton/ContinueLogic" method="_on_continue_button_button_up"]

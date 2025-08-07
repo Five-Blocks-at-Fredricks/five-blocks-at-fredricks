@@ -78,3 +78,4 @@ script = ExtResource("2_flfri")
 ScenePath = "res://Scenes/MainMenu.tscn"
 
 [connection signal="button_up" from="ColorRect/MuteFlashSound" to="ColorRect" method="_on_mute_flash_sound_button_up"]
+[connection signal="button_up" from="Back" to="ColorRect" method="_on_back_button_up"]

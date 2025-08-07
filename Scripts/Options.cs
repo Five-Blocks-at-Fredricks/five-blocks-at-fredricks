@@ -14,6 +14,14 @@ public partial class Options : ColorRect {
         }
     }
 
+    private void _on_back_button_up() {
+        if (!Globals.MuteFlashSound) {
+            BazookaManager.Write(BazookaManager.MuteFlashSound, "0");
+        } else {
+            BazookaManager.Write(BazookaManager.MuteFlashSound, "1");
+        }
+    }
+
     private void _on_mute_flash_sound_button_up() {
         Button MuteFlashSoundButton = GetNode<Button>("MuteFlashSound");
 

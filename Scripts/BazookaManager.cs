@@ -2,6 +2,7 @@ using Godot;
 
 public partial class BazookaManager : Node {
     public static string LastBeatenNight = "lastbeatennight";
+    public static string MuteFlashSound = "0";
 
     public static string Read(string saveKey, string defaultValue) {
         string path = "user://" + saveKey + ".txt";
