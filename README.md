@@ -4,5 +4,3 @@
  It is made in a blocky art style and isn't meant to be that scary.
 
  It totally isn't in a blocky art style because I've literally never made a 3d model before.
-
- This game is pretty close to release.
