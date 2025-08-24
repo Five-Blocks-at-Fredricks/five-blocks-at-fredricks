@@ -1,5 +1,5 @@
 # Five Blocks at Fredricks
- Five Blocks at Fredricks (Or fbaf) is a fnaf fan game meant to be goofy.
+ Five Blocks at Fredricks (Or fbaf) is a fnaf fan game meant to be a lil special.
 
  It is made in a blocky art style and isn't meant to be that scary.
 
