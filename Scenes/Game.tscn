@@ -1397,6 +1397,7 @@ text = "Right Door Power: {Power}"
 vertical_alignment = 1
 
 [node name="Debug" type="Control" parent="GUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
